@@ -13,7 +13,7 @@ const PersonalViewPage = () => {
             <DivineNavbar />
             <PersonalAd />
             <PersonalView />
-            <RelatedItem />
+            {/* <RelatedItem /> */}
             <Footer />
         </Container>
     )
