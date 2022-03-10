@@ -4,7 +4,6 @@ import Slider from "react-slick/lib/slider";
 import { ListForSlider, sliderRes } from "../../common/common";
 import CardForTesti from "../Products/CardForTesti";
 import LabelWithChild from "../common/LabelWithChild";
-
 const TestiMonial = () => {
   const sliderRef = useRef()
   const settings = {

@@ -2,6 +2,7 @@ import { Col, FormControl, Image, InputGroup, Row } from "react-bootstrap";
 import { FaFacebookF } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import image from "../../Assets/images/icon2.png";
+import {Link} from "react-router-dom"
 const Footer = () => {
   return (
 
@@ -17,22 +18,42 @@ const Footer = () => {
         </div>
       </Col>
       <Col lg="3" xl="3" sm="12" md="5" className="text-white mt-3 mb-3">
-        <div className="fw-700">About Us</div>
-        <div className="fw-700 mt-xl-3 mt-3">Contact Us</div>
-        <div className="fw-700 mt-xl-3 mt-3">Terms & Conditions</div>
+        <div className="fw-700">
+          <a href="http://localhost:3000/#about">
+            About Us
+            </a>
+          </div>
+        <div className="fw-700 mt-xl-3 mt-3">
+        <Link to="/">
+          Contact Us
+          </Link>
+          </div>
+        <div className="fw-700 mt-xl-3 mt-3">
+        <Link to="/">
+          Terms & Conditions
+          </Link>
+          </div>
       </Col>
       <Col lg="3" xl="3" sm="12" md="5" className="text-white mt-3 mb-3 ">
         <div className="row">
           <div className="col-2 text-end">
             <FaFacebookF />
           </div>
-          <div className="col-2 fw-700">Facebook</div>
+          <div className="col-2 fw-700">
+            <a href="" target="_blank" >
+            Facebook
+              </a>
+            </div>
         </div>
         <div className="row mt-2">
           <div className="col-2 text-end">
             <AiFillInstagram />
           </div>
-          <div className="col-2 fw-700">Instagram</div>
+          <div className="col-2 fw-700">
+          <a href="" target="_blank" >
+            Instagram
+            </a>
+            </div>
         </div>
       </Col>
       <Col lg="3" xl="3" sm="12" md="5" className="text-white mt-3">

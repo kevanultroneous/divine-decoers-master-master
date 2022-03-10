@@ -4,6 +4,7 @@ import { getTemples, getTemplesPagignate } from "../Api/api";
 import { customTempleList2 } from "../common/common";
 import Footer from "../Components/common/Footer";
 import LabelOfContent from "../Components/common/LabelOfContent";
+import Loader from "../Components/common/Loader";
 import DivineNavbar from "../Components/common/Navbar"
 import ProductCard from "../Components/Products/ProductCard";
 
@@ -12,17 +13,20 @@ const CustomTemplePage = () => {
     const [page, setPage] = useState(1)
     const [dataCount,setDataCount] = useState(0)
     const [btnS,setBtnS] = useState('')
+    const [loader,setLoader] = useState(true)
     useEffect(() => {
         TemplesApi()
-       
     }, [])
     const TemplesApi = () => {
         getTemplesPagignate(page, 8)
             .then((response) => {
                 setDataCount(response.data.total_documents)
                 setTempleData(response.data.data)
+                setLoader(false)
             })
-            .catch((error) => console.log(error))
+            .catch((error) => {
+                console.log(error)
+            })
     }
     const SeeMore = () => {
         setPage(page + 1)
@@ -35,7 +39,12 @@ const CustomTemplePage = () => {
 
     return (
         <Container fluid className="back-contain">
-            <DivineNavbar />
+            {
+               loader ? 
+                <Loader/>
+                :
+                <>
+                 <DivineNavbar />
             <LabelOfContent title="Custom Temples" />
             <Row className="justify-content-center mx-lg-5 mb-5">
                 {
@@ -56,6 +65,8 @@ const CustomTemplePage = () => {
                 </Col>
             </Row>
             <Footer />
+                </>
+            }
         </Container>
     )
 }
