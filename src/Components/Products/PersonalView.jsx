@@ -6,7 +6,7 @@ import InquireForm from "./InquireForm"
 import rightA from "../../Assets/images/r-a.png"
 import leftA from "../../Assets/images/l-a.png"
 import { useNavigate, useParams } from "react-router-dom"
-import { getTemplesById } from "../../Api/api"
+import { GetTempleById, getTemplesById } from "../../Api/api"
 
 const PersonalView = () => {
     const params = useParams()
@@ -20,11 +20,11 @@ const PersonalView = () => {
 
     const navigate = useNavigate()
     useEffect(() => {
-        NetworkDataFetch()
+     NetworkDataFetch()
     }, [])
     const NetworkDataFetch = () => {
-        getTemplesById(params.templeid)
-            .then((response) => setNetworkData(response.data))
+       GetTempleById(params.templeid)
+            .then((response) =>setNetworkData(response.data))
             .catch((error) => console.log(error.message))
     }
     const settings = {
@@ -54,12 +54,16 @@ const PersonalView = () => {
     }
     return (
         <>
+        {
+            console.log(networkData)
+        }
             {
                 params.templeid === 'undefined' || !params.templeid ?
                     navigate('/') :
                     <>
                         <InquireForm
                             showIm={inf}
+                            frameno={selectedItm}
                             hide={() => setInf(false)}
                         />
                         {
@@ -72,7 +76,7 @@ const PersonalView = () => {
                                                 {
                                                     networkData.data.image.map((value, index) =>
                                                         <div className="card p-0 border-0" key={index}>
-                                                            <Image src={value} className="card-img-top" alt="" />
+                                                            <Image src={"http://192.168.29.42:8000/public/temples/"+value} className="card-img-top" alt="" />
                                                         </div>
                                                     )
                                                 }
@@ -106,8 +110,10 @@ const PersonalView = () => {
                                                             <input
                                                                 type="radio"
                                                                 name="test"
-                                                                value={v.img}
-                                                                onChange={(e) => setSelectedItem(e.target.value)} />
+                                                                value={v.nm}
+                                                                onChange={(e) => 
+                                                                setSelectedItem(e.target.value)
+                                                               } />
                                                             <Image src={v.img} />
                                                             <p className="text-center fw-400 fs-12 mt-3">{v.nm}</p>
                                                         </label>
@@ -130,12 +136,12 @@ const PersonalView = () => {
                                                         networkData.data.productInformation
                                                     }
                                                 </li>
-                                                {/* {product_information.map((v, i) => <li className="list-font" key={i}>{v}</li>)} */}
+                                                {product_information.map((v, i) => <li className="list-font" key={i}>{v}</li>)}
                                             </ul>
                                         </Col>
                                     </Row>
                                 </>
-                        }
+                     } 
                     </>
             }
 

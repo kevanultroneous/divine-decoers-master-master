@@ -1,6 +1,7 @@
 import axios from "axios";
-
-axios.defaults.baseURL = "http://192.168.1.28:8000/api/"
+const api1  = "http://192.168.29.42:8000/api/"
+const MainUrl = "http://192.168.1.28:8000/api/"
+axios.defaults.baseURL = api1
 
 export const getAboutus = () =>{
     return axios.get('getaboutus')
@@ -17,6 +18,6 @@ export const getTemplesForLimit = () =>{
 export const getTemplesPagignate = (page,limit) =>{
     return axios.get('gettemples',{ params: { page:page,limit:limit } })
 }
-export const getTemplesById = (id) =>{
-    return axios.get(`gettemples/${id}`)
+export const GetTempleById = (id) =>{
+    return  axios.get(`gettemplebyid/${id}`)
 }

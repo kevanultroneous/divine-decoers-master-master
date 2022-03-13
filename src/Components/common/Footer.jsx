@@ -19,19 +19,21 @@ const Footer = () => {
       </Col>
       <Col lg="3" xl="3" sm="12" md="5" className="text-white mt-3 mb-3">
         <div className="fw-700">
-          <a href="http://localhost:3000/#about">
+          <a href="http://localhost:3000/#about" className="link-styles">
             About Us
             </a>
           </div>
-        <div className="fw-700 mt-xl-3 mt-3">
+        {/* <div className="fw-700 mt-xl-3 mt-3">
         <Link to="/">
           Contact Us
           </Link>
-          </div>
+          </div> */}
         <div className="fw-700 mt-xl-3 mt-3">
-        <Link to="/">
-          Terms & Conditions
-          </Link>
+      <a href="" className="link-styles">
+Terms & Conditions
+      </a>
+          
+          {/* </Link> */}
           </div>
       </Col>
       <Col lg="3" xl="3" sm="12" md="5" className="text-white mt-3 mb-3 ">
@@ -40,7 +42,7 @@ const Footer = () => {
             <FaFacebookF />
           </div>
           <div className="col-2 fw-700">
-            <a href="" target="_blank" >
+            <a href="" target="_blank" className="link-styles">
             Facebook
               </a>
             </div>
@@ -50,7 +52,7 @@ const Footer = () => {
             <AiFillInstagram />
           </div>
           <div className="col-2 fw-700">
-          <a href="" target="_blank" >
+          <a href="" target="_blank" className="link-styles">
             Instagram
             </a>
             </div>

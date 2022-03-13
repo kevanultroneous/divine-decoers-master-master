@@ -10,9 +10,9 @@ import bg from "../Assets/images/background.png"
 const MainPage = () => {
   return (
     <>
-  
-      <TitleContent headings={<DivineNavbar />} />
+     <DivineNavbar/>
       <Container fluid className="back-contain">
+        <TitleContent/>
         <CustomTemples />
         <div id="about">
           <AboutUs />

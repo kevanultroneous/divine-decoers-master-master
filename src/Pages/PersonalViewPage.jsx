@@ -9,11 +9,11 @@ import PersonalAd from "../Components/Products/PersonalAd";
 
 const PersonalViewPage = () => {
     return (
-        <Container fluid className="back-contain">
+        <Container fluid className="back-contain Paddings-Top-Contain2">
             <DivineNavbar />
             <PersonalAd />
             <PersonalView />
-            {/* <RelatedItem /> */}
+            <RelatedItem />
             <Footer />
         </Container>
     )

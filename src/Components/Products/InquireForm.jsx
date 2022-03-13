@@ -14,6 +14,7 @@ const Inputs = (p) => {
             </Col>
             <Col xl={12}>
                 <input
+                    disabled={p.lock}
                     value={p.value}
                     onChange={p.change}
                     className="in-form w-100 p-2"
@@ -79,10 +80,6 @@ const InquireForm = (props) => {
             setCs(true)
             setNumberE('block')
         }
-        else if (validator.isEmpty(frame)) {
-            setCs(true)
-            setFrameE('block')
-        }
         else if (
             (validator.isEmpty(width) || isNaN(width)) ||
             (validator.isEmpty(height) || isNaN(height)) ||
@@ -101,7 +98,7 @@ const InquireForm = (props) => {
         setNameE('none')
         setMailE('none')
         setNumberE('none')
-        setFrameE('none')
+      
         setSizeE('none')
         setDesE('none')
     }
@@ -194,11 +191,10 @@ const InquireForm = (props) => {
                 <Inputs
                     name="Frame/Pillar Number*"
                     type="text"
-                    value={frame}
-                    change={(e) => setFrame(e.target.value)}
+                    lock={true}
+                    value={props.frameno}
                     placeholder="Enter Frame/Pillar Number"
-                    error="Required *"
-                    errorshow={frameE}
+                  
                 />
                 <Row >
                     <Col xl={12}>

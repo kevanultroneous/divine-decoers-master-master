@@ -2,12 +2,27 @@
 
 * {
   font-family: "Montserrat", sans-serif;
+  cursor: url('../images/droplet.svg');
 }
-
+.Paddings-Top-Contain{
+  padding-top: 6em;
+}
+.Paddings-Top-Contain2{
+  padding-top: 6em;
+}
+.link-styles{
+  text-decoration: none !important;
+  color: #fff;
+}
+.link-styles:hover{
+  color: #F8CCC2;
+}
 .card-h {
   height: 400px;
 }
-
+.contain-space{
+padding: 0em 0em 0em 0em;
+}
 #myBtn {
   display: none;
   /* Hidden by default */
@@ -25,13 +40,22 @@
   /* Remove outline */
   height: 6%;
 }
-
+.back-image {
+  background: url('../images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 125vh;
+  position: relative;
+}
+.banner-image {
+  background-image: url('../images/background.png');
+  background-size: cover;
+}
 .background-home {
   background-image: url("../images/background.png");
   background-size: cover;
   height: 100vh;
-  background-attachment: scroll;
-  background-position: center;
 }
 
 .background-error {
@@ -40,7 +64,6 @@
   background-position: center;
   height: 100vh;
 }
-
 .back-contain {
   background-color: #FFEFE2
 }
@@ -73,8 +96,9 @@
 }
 
 .under-content {
-  margin-top: 6em;
-  margin-left: 5em;
+  display: flex;
+  justify-content:end;
+  align-items: center;
 }
 
 .btn {
@@ -527,11 +551,10 @@
     font-size: 30px;
   }
 
-  .background-home {
+  .back-image {
     background-image: url("../images/mobile.png");
-    background-size: cover;
-    height: 100vh;
-    background-attachment: scroll;
+    background-size:cover;
+    height: 50vh;
     background-position: center;
   }
 
@@ -563,7 +586,7 @@
   .paragraph {
     font-size: medium;
   }
-
+  
   .carousel-label {
     font-size: 17px;
   }
@@ -576,10 +599,10 @@
     opacity: 1;
   }
 
-  /* .under-content {
-    margin-top: 20em;
-    margin-left: 0em;
-  } */
+  .under-content {
+    padding-top: 50em;
+    margin-bottom: 13em;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -649,15 +672,12 @@
 }
 
 .loaders-contain {
-  position: fixed;
   box-sizing: border-box;
   inset: 0px;
-  width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color:#F8CCC2;
   color: rgb(232, 232, 232);
   font-size: large;
-  padding: 2rem;
   line-height: 1.2;
   white-space: pre-wrap;
   overflow: auto;
@@ -722,40 +742,56 @@
     height: 37em;
   }
 }
- .flag-dropdown {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  padding: 0;
-  background-color: #FFEFE2 !important;
-  border: 1px solid #884B5B4F  !important;
-  border-radius: 3px 0 0 3px;
-}
 .react-tel-input .form-control {
   position: relative;
   font-size: 14px;
   letter-spacing: .01rem;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
-  padding-left: 48px;
+  padding: 20px 48px;
   margin-left: 0;
-  background: #FFFFFF;
-  border: 1px solid #884B5B4F;
+  background: #FFEFE2;
+  /* border: 1px solid #CACACA; */
+  border: 1px solid #884B5B4F !important;
   border-radius: 5px;
   line-height: 25px;
   height: 35px;
   width: 100%;
   outline: none;
 }
-.react-tel-input .form-control {
-  border-radius: 6px;
-  border: 1px solid #884B5B4F;
-  outline: none;
+
+.react-tel-input .country-list .search {
   background-color: #FFEFE2;
 }
-.form-control:focus {
- box-shadow: none;
+
+.react-tel-input .country-list {
+  background-color: #FFEFE2;
 }
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.react-tel-input .flag-dropdown.open .selected-flag {
+  background: #FFEFE2;
+  border-radius: 3px 0 0 0;
+}
+
+.react-tel-input .selected-flag:hover,
+.react-tel-input .selected-flag:focus {
+  background-color: #FFEFE2;
+}
+
+.react-tel-input .flag-dropdown {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  background-color: #FFEFE2 !important;
+  border: 1px solid #884B5B4F !important;
+  border-radius: 3px 0 0 3px;
+}
+
 .btn-check:focus+.btn-primary, .btn-primary:focus {
  box-shadow: none;
 }

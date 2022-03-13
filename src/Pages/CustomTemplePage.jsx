@@ -38,7 +38,7 @@ const CustomTemplePage = () => {
     }, [page])
 
     return (
-        <Container fluid className="back-contain">
+        <Container fluid className="back-contain Paddings-Top-Contain">
             {
                loader ? 
                 <Loader/>
@@ -52,7 +52,7 @@ const CustomTemplePage = () => {
                         <ProductCard
                             iditem={value._id}
                             key={index}
-                            image={value.image[0]}
+                            image={"http://192.168.29.42:8000/public/temples/"+value.image[0]}
                             name={value.name}
                             price={value.price}
                         />
@@ -66,7 +66,7 @@ const CustomTemplePage = () => {
             </Row>
             <Footer />
                 </>
-            }
+             }
         </Container>
     )
 }

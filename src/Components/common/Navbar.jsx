@@ -25,10 +25,10 @@ const DivineNavbar = () => {
   window.addEventListener('scroll', changeNavbarColor);
   return (
     <>
-      <ScrollToTop smooth  style={{background:'#DB4242',color:'#fff'}}/>
       <Image src={call} id="myBtn" onClick={() => setShow(true)} />
-      <Navbar expand="lg" style={{ background: chngClr ? '#FFEFE2' : 'none' }} className="fixed-mob-top">
-        <Container fluid className="mt-3  mt-xl-3 mt-lg-3  mt-md-3">
+      <Navbar expand="lg" 
+      style={{ background: chngClr ? '#FFEFE2' : 'none' ,transition:'0.5s'}} fixed="top">
+        <Container fluid className="p-xl-3 p-md-3 p-lg-3 p-3">
           <Link to="/" className="text-decoration-none">
             <Navbar.Brand href="#" className="ms-md-5 ms-xs-1 ms-xl-5 ms-lg-5">
               <Image src={logo} className="icon-size" />
