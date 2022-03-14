@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { getTemplesForLimit } from "../../Api/api";
-import { customTempleList } from "../../common/common";
+import { customTempleList, TempleLink } from "../../common/common";
 import LabelOfContent from "../common/LabelOfContent";
 import ProductCard from "../Products/ProductCard";
 const CustomTemples = () => {
@@ -22,7 +22,7 @@ const CustomTemples = () => {
     navigate('/customtemples')
   }
   return (
-    <>
+    <div className="Paddings-Top-Contain">
       <LabelOfContent title={"Custom Temples"} />
       <Row className="justify-content-center mx-lg-5">
         {
@@ -31,8 +31,8 @@ const CustomTemples = () => {
             <ProductCard
               iditem={value._id}
               key={index}
-              image={value.image[0]}
-              name={value.name}
+              image={TempleLink+value.image[0]}
+              name={value.name} 
               price={value.price}
             />
           )
@@ -44,7 +44,7 @@ const CustomTemples = () => {
           <div className="btn btn-primary" onClick={() => handleNavigate()}>View All</div>
         </Col>
       </Row>
-    </>
+    </div>
   );
 };
 export default CustomTemples;

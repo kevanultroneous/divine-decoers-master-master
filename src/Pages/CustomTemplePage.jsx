@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Image, Row } from "react-bootstrap"
 import { getTemples, getTemplesPagignate } from "../Api/api";
-import { customTempleList2 } from "../common/common";
+import { TempleLink } from "../common/common";
 import Footer from "../Components/common/Footer";
 import LabelOfContent from "../Components/common/LabelOfContent";
 import Loader from "../Components/common/Loader";
@@ -52,7 +52,7 @@ const CustomTemplePage = () => {
                         <ProductCard
                             iditem={value._id}
                             key={index}
-                            image={"http://192.168.1.28:8000/public/temples/"+value.image[0]}
+                            image={TempleLink+value.image[0]}
                             name={value.name}
                             price={value.price}
                         />
@@ -64,7 +64,7 @@ const CustomTemplePage = () => {
                     <div className="btn btn-primary" onClick={() => SeeMore()} style={{display:btnS}}>See More</div>
                 </Col>
             </Row>
-            {/* <Footer /> */}
+            <Footer />
                 </>
              }
         </Container>

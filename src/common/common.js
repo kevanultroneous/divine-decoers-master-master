@@ -1,5 +1,11 @@
 import image from "../Assets/images/model.jpg";
 import user from "../Assets/images/user.png";
+import user2 from "../Assets/images/user2.png";
+import user3 from "../Assets/images/user3.png";
+import user4 from "../Assets/images/user4.png";
+import user5 from "../Assets/images/user5.png";
+import user6 from "../Assets/images/user6.png";
+
 import plr from "../Assets/images/plr.png";
 
 export const findId = (str) =>{
@@ -7,7 +13,8 @@ export const findId = (str) =>{
   let k2 = str.substring(k1+1)
   return k2;
 }
-
+export const TempleLink = "http://192.168.1.28:8000/temples/"
+export const FrameLink = "http://192.168.1.28:8000/frames/"
 export const customTempleList = [
   {
     image: image,
@@ -143,31 +150,31 @@ export const ListForSlider = [
     paragraph: "For the past many months, I was looking for a Derasar but could not find the one I wanted. I had my preparation done to import it from India but then our relative suggested us this website and then after going through the designs we decided to buy it from here.",
     username: "Urja Modi, Hobart",
     rating: 5,
-    icon: user
+    icon: user4
   },
   {
     paragraph: "Our parents shifted from India a week before and my mom wanted a large temple. We then started looking online and decided to buy it from divine decors as I liked the design.",
     username: "Harsh Makwana, Melbourne",
     rating: 4.5,
-    icon: user
+    icon: user2
   },
   {
     paragraph:" We wanted a specific temple made up of pine wood the  design we had in our mind was a bit of a tricky one, we inquired but could not find any then one of our relatives gave contact of divine decores we visited there and explained our design and then they  show us  some samples and we did get what we wanted and finally placed our order.",
     username: "Brijal Shah, NSW",
     rating: 5,
-    icon: user
+    icon: user6
   },
   {
     paragraph:"We wanted to give a wall hanging to one of our close friends as a housewarming gift and as a Hindu no better gift is a Ganesha wall hanging. We came across divine decores on instagram and saw their hangings. We found it beautiful. We inquired on call and then placed the  order of our  size with some customization.",
     username: "Yogesh  Patel, Perth",
     rating: 5,
-    icon: user
+    icon: user3
   },
   {
     paragraph:"Got Divine decores reference from a close relative as we wanted a mandir for our home. We went out there and after looking  at  different mandirs we not only ordered the mandir but infarct decided to buy some more items like wall hangings",
     username: "Shiv Mulchandani,  Sydeny",
     rating: 5,
-    icon: user
+    icon: user5
   }
 ]
 export const personalViewList = {

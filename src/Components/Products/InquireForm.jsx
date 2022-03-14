@@ -47,18 +47,20 @@ const InquireForm = (props) => {
     const [desE, setDesE] = useState('none')
     const InquireApi = () => {
         const obj = {
-            "name": name,
-            "templename": "mandir",
-            "email": mail,
-            "phone": number,
-            "frame": frame,
-            "width": width,
-            "height": height,
-            "depth": Depth,
-            "description": des
+            "name":name,
+            "templename":props.templename,
+            "email":mail,
+            "phone":number,
+            "frame":props.frameno,
+            "width":width,
+            "height":height,
+            "depth":Depth,
+            "description":des
         }
+        console.log(obj)
         InquireNow(obj)
             .then((response) => {
+                console.log(response)
                 if (response.data.status) {
                     clearAll()
                     return true
@@ -76,10 +78,10 @@ const InquireForm = (props) => {
             setCs(true)
             setMailE('block')
         }
-        else if (validator.isEmpty(number) || !validator.isMobilePhone(number)) {
-            setCs(true)
-            setNumberE('block')
-        }
+        // else if (validator.isEmpty(number) || !validator.isMobilePhone(number)) {
+        //     setCs(true)
+        //     setNumberE('block')
+        // }
         else if (
             (validator.isEmpty(width) || isNaN(width)) ||
             (validator.isEmpty(height) || isNaN(height)) ||
@@ -92,6 +94,7 @@ const InquireForm = (props) => {
             setDesE('block')
         } else {
             setCs(false)
+          
         }
     }
     const clearError = () => {
@@ -115,7 +118,7 @@ const InquireForm = (props) => {
     const navigate = useNavigate()
     const submitForm = () => {
         handleForm()
-        if (!cs) {
+        if(cs === false){
             InquireApi()
             navigate('/thankyou')
         }
@@ -148,7 +151,7 @@ const InquireForm = (props) => {
                 </Row>
                 <Row className="mt-4 mb-3">
                     <Col>
-                        <label className="fw-700 in-form-sub">Modern  Temple</label>
+                        <label className="fw-700 in-form-sub">{props.templename}</label>
                     </Col>
                 </Row>
 
@@ -179,8 +182,8 @@ const InquireForm = (props) => {
                          
                             countryCodeEditable={false}
                             enableSearch={true}
-                            country={'us'}
-                            value={number}
+                            country={'au'}
+                            value={ number}
                             onChange={phone => setNumber(phone)}
                         />
                     </Col>

@@ -183,9 +183,12 @@ padding: 0em 0em 0em 0em;
 
 @media (min-width: 992px) {
   .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 2.5rem;
+    display: flex;
+    /* padding-right: 2.5rem; */
     padding-left: 0.5rem;
-  }
+    justify-content: center;
+    align-items: center;
+}
 }
 
 .email-btn {
@@ -314,11 +317,14 @@ padding: 0em 0em 0em 0em;
   height: 610px;
   width: 610px !important;
 }
-
+.icon-space{
+  padding: 0% 0% 0% 0%;
+}
 .vector {
   width: 0px;
+  margin-top: 0.8em;
   height: 16px;
-  border: 2px solid #F5BCB3;
+  border: 1px solid #F5BCB3;
 }
 
 .carousel-label {
@@ -443,7 +449,8 @@ padding: 0em 0em 0em 0em;
   width: 100%;
   opacity: 0;
   transition: .5s ease;
-  background: linear-gradient(to Bottom, #44243B00 0%, #2B1725E0 99%)
+  background: linear-gradient(to Bottom, #44243B00 0%, #2B1725E0 99%);
+  border-radius: 12px;
 }
 
 .card:hover .overlay {
@@ -606,13 +613,18 @@ padding: 0em 0em 0em 0em;
     padding-top: 50em;
     margin-bottom: 13em;
   }
+  .vector{
+    display: none;
+  }
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
   .fs-37 {
     font-size: 18px;
   }
-
+  .vector{
+    display: none;
+  }
   .fs-15 {
     font-size: 28px;
   }
@@ -687,18 +699,19 @@ padding: 0em 0em 0em 0em;
 
 .box-mv {
   padding: 0;
-  border-radius: 10px;
+  border-radius: 1em;
   background-color: #FFEFE2;
   border-color: 1px solid red;
 }
 
 .mv {
-  border: 1px solid red;
+  border: 1px solid #DB4242;
   background-color: #FEEFE2;
+  border-radius: 0.3em;
 }
 
 .m-mv {
-  margin-top: -15%;
+  margin-top: -11.2%;
 }
 
 /* center */
@@ -716,15 +729,19 @@ padding: 0em 0em 0em 0em;
 .btn:hover {
   color: #fff;
   background-color: #db4242 !important;
-  border-color: #db4242 !important;
+  border-color: #DB4242 !important;
 }
 
 .btn-check:focus+.btn-primary, .btn-primary:focus {
   color: #fff;
   background-color: #db4242 !important;
-  border-color: #db4242 !important;
+  border-color: #DB4242 !important;
 }
-
+[type=radio]:checked+img {
+  outline: 1px solid #DB4242;
+  background-color: #F8CCC2;
+  border-radius: 0.3em;
+}
 .btn-primary:active:focus {
   box-shadow: none;
 }

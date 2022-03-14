@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Button, Col, Image, Row } from "react-bootstrap"
-import { personalViewList, sliderRes } from "../../common/common"
+import { FrameLink, personalViewList, sliderRes, TempleLink } from "../../common/common"
 import Slider from "react-slick/lib/slider"
 import InquireForm from "./InquireForm"
 import rightA from "../../Assets/images/r-a.png"
@@ -17,15 +17,23 @@ const PersonalView = () => {
     const [dis, setDis] = useState('none')
     const [inf, setInf] = useState(false)
     const [networkData, setNetworkData] = useState({})
-
+    const [templename, setTemplename] = useState('')
     const navigate = useNavigate()
     useEffect(() => {
-     NetworkDataFetch()
-     console.log(networkData)
+        NetworkDataFetch()
+        console.log(networkData)
     }, [])
+    useEffect(() => {
+        NetworkDataFetch()
+        window.scrollTo(0, 0)
+        console.log(networkData)
+    }, [params])
     const NetworkDataFetch = () => {
-       GetTempleById(params.templeid)
-            .then((response) =>setNetworkData(response.data))
+        GetTempleById(params.templeid)
+            .then((response) => {
+                setNetworkData(response.data)
+                setTemplename(response.data.data.name)
+            })
             .catch((error) => console.log(error.message))
     }
     const settings = {
@@ -55,14 +63,15 @@ const PersonalView = () => {
     }
     return (
         <>
-        {
-            console.log(networkData)
-        }
+            {
+                console.log(networkData.data)
+            }
             {
                 params.templeid === 'undefined' || !params.templeid ?
                     navigate('/') :
                     <>
                         <InquireForm
+                            templename={templename}
                             showIm={inf}
                             frameno={selectedItm}
                             hide={() => setInf(false)}
@@ -77,7 +86,7 @@ const PersonalView = () => {
                                                 {
                                                     networkData.data.image.map((value, index) =>
                                                         <div className="card p-0 border-0" key={index}>
-                                                            <Image src={value} className="card-img-top" alt="" />
+                                                            <Image src={TempleLink + value} className="card-img-top" alt="" />
                                                         </div>
                                                     )
                                                 }
@@ -89,12 +98,11 @@ const PersonalView = () => {
                                                     <label className="p-font">{networkData.data.name}</label>
                                                 </div>
                                                 <div className="col-12">
-                                                    <p className="p-font-sub">{networkData.data.price+"$"}</p>
+                                                    <p className="p-font-sub">{networkData.data.price + "$"}</p>
                                                 </div>
-                                                {/* {params.templeid} */}
                                                 <div className="col-12">
                                                     <p className="p-font-sub2">Available :
-                                                    <span style={{color:'#EB8E88'}}>{networkData.data.stock!=="yes" ?  " Out of Stock":" In Stock" }</span> </p>
+                                                        <span style={{ color: '#EB8E88' }}>{networkData.data.stock !== "yes" ? " Out of Stock" : " In Stock"}</span> </p>
                                                 </div>
                                                 <div className="col-12">
                                                     <p className="p-sub-para w-100">{networkData.data.information}</p>
@@ -103,20 +111,21 @@ const PersonalView = () => {
                                             <ModalImgV pl={hItem} display={dis} />
                                             <p style={{ color: '#44233B' }} className="fw-700">Select your Frame/Pillar</p>
                                             <div className="row ms-xl-3 ms-3 mt-5">
-                                                {personalViewList.pillers.map((v, i) =>
+                                                {console.log(networkData.data.framename)}
+                                                {networkData.doc.map((v, i) =>
                                                     <Col xl={2} xs={4} md={2} className="p-0" key={i}>
                                                         <label
                                                             onMouseLeave={() => onHoverOutAction()}
-                                                            onMouseEnter={() => onHoverAction(v.img)}>
+                                                            onMouseEnter={() => onHoverAction(FrameLink + v.frameimage)}>
                                                             <input
                                                                 type="radio"
                                                                 name="test"
-                                                                value={v.nm}
-                                                                onChange={(e) => 
-                                                                setSelectedItem(e.target.value)
-                                                               } />
-                                                            <Image src={v.img} />
-                                                            <p className="text-center fw-400 fs-12 mt-3">{v.nm}</p>
+                                                                value={v.framename}
+                                                                onChange={(e) =>
+                                                                    setSelectedItem(e.target.value)
+                                                                } />
+                                                            <Image src={FrameLink + v.frameimage} height={88} width={82.43} />
+                                                            <p className="text-center fw-400 fs-12 mt-3">{v.framename}</p>
                                                         </label>
                                                     </Col>
                                                 )}
@@ -132,17 +141,12 @@ const PersonalView = () => {
                                         <Col>
                                             <label className="fw-bold list-font">Product Information</label>
                                             <ul className="mt-5">
-                                                <li>
-                                                    {
-                                                        networkData.data.productInformation
-                                                    }
-                                                </li>
-                                                {product_information.map((v, i) => <li className="list-font" key={i}>{v}</li>)}
+                                                {networkData.data.productInformation.map((v, i) => <li className="list-font" key={i}>{v}</li>)}
                                             </ul>
                                         </Col>
                                     </Row>
                                 </>
-                     } 
+                        }
                     </>
             }
 

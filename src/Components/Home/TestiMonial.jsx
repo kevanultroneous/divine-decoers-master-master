@@ -16,7 +16,7 @@ const TestiMonial = () => {
     responsive: sliderRes
   };
   return (
-    <>
+    <div className="Paddings-Top-Contain">
       <LabelWithChild
         title="Testimonials"
         next={() => sliderRef.current.slickPrev()}
@@ -44,7 +44,7 @@ const TestiMonial = () => {
           </Slider>
         </Col>
       </Row>
-    </>
+      </div>
   );
 };
 export default TestiMonial;

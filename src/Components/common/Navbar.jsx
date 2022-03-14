@@ -48,7 +48,7 @@ const DivineNavbar = () => {
                 <Nav.Link href="/customtemples" className="me-xl-5 me-md-5 me-lg-5">Products</Nav.Link>
               </Link>
               <Nav.Link href="http://localhost:3000/#about" className="">About Us</Nav.Link>
-              {/* <div className="vector"/> */}
+              <div className="vector ms-5 me-3"/>
               <Link to="/customtemples" className="text-decoration-none">
                 <Nav.Link href="/customtemples" className="fs-20">
                   <FaFacebookF />
@@ -59,7 +59,7 @@ const DivineNavbar = () => {
                   <AiFillInstagram />
                 </Nav.Link>
               </Link>
-              {/* <div className="vector"/> */}
+              <div className="vector me-5 ms-4"/>
               <Nav.Link onClick={() => setShow(true)} className="p-0 me-xl-5" id="call-tab-mob">
                 <Image src={call} height="45" />
               </Nav.Link>

@@ -11,9 +11,9 @@ const Footer = () => {
         <div>
           <Image src={image} />
           <p className="text-white mt-3 fw-500">
-            497 Evergreen Rd. Roseville, CA 95673
-            <br />+44 345 678***
-            <br />XYZ@gmail.com
+          39C, Mandoon Road, Girraween, 2145
+            <br />+61 403 260 924
+            <br />sales@divinedecores.com.au
           </p>
         </div>
       </Col>
@@ -28,13 +28,13 @@ const Footer = () => {
           Contact Us
           </Link>
           </div> */}
-        <div className="fw-700 mt-xl-3 mt-3">
+        {/* <div className="fw-700 mt-xl-3 mt-3">
       <a href="" className="link-styles">
 Terms & Conditions
       </a>
           
-          {/* </Link> */}
-          </div>
+       
+          </div> */}
       </Col>
       <Col lg="3" xl="3" sm="12" md="5" className="text-white mt-3 mb-3 ">
         <div className="row">
@@ -42,7 +42,7 @@ Terms & Conditions
             <FaFacebookF />
           </div>
           <div className="col-2 fw-700">
-            <a href="" target="_blank" className="link-styles">
+            <a href="https://www.facebook.com/divinedecores/" target="_blank" className="link-styles">
             Facebook
               </a>
             </div>
@@ -52,7 +52,7 @@ Terms & Conditions
             <AiFillInstagram />
           </div>
           <div className="col-2 fw-700">
-          <a href="" target="_blank" className="link-styles">
+          <a href="https://www.instagram.com/divinedecores/" target="_blank" className="link-styles">
             Instagram
             </a>
             </div>

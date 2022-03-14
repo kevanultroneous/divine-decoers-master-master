@@ -13,7 +13,7 @@ const AboutUs = () => {
     getData()
   }, [])
   return (
-    <>
+    <div className="Paddings-Top-Contain">
       <LabelOfContent title={"About Us"} />
       <Row className="mt-3" >
         <Col lg="12">
@@ -25,7 +25,7 @@ const AboutUs = () => {
           </p>
         </Col>
       </Row>
-    </>
+    </div>
   );
 };
 export default AboutUs;
