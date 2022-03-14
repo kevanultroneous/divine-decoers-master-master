@@ -129,6 +129,7 @@ const InquireForm = (props) => {
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
+            
         >
             <Modal.Body className="p-5" style={{ background: '#FFEFE2', borderRadius: '12px' }}>
 
@@ -206,24 +207,24 @@ const InquireForm = (props) => {
                         <input
                             className="in-form p-2"
                             placeholder="Width : "
-                            type="text"
+                            type="number"
                             value={width}
                             onChange={(e) => setWidth(e.target.value)}
                         />
                     </Col>
                     <Col xl={4}>
                         <input
-                            className="in-form p-2"
+                            className="in-form p-2 mt-3 mt-xl-0 mt-lg-0 mt-md-0"
                             placeholder="Height : "
-                            type="text"
+                            type="number"
                             value={height}
                             onChange={(e) => setHeight(e.target.value)} />
                     </Col>
                     <Col xl={4}>
                         <input
-                            className="in-form p-2"
+                            className="in-form p-2 mt-3 mt-xl-0 mt-lg-0 mt-md-0"
                             placeholder="Depth : "
-                            type="text"
+                            type="number"
                             value={Depth}
                             onChange={(e) => setDepth(e.target.value)} />
                     </Col>

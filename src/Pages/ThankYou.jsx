@@ -5,7 +5,7 @@ const ThankYou = () => {
     return (
         <Container fluid style={{ background: '#FFEFE2' ,height:'100vh'}} className="parent">
                 <Row className="justify-content-center child">
-                    <Col xl={2} xs={10}>
+                    <Col xl={2} xs={7}>
                         <Image src={heart} className="text-center"/>
                     </Col>
                     <Col xl={12} xs={12}className="mt-5">

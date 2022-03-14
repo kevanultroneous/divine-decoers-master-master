@@ -7,6 +7,7 @@ import rightA from "../../Assets/images/r-a.png"
 import leftA from "../../Assets/images/l-a.png"
 import { useNavigate, useParams } from "react-router-dom"
 import { GetTempleById, getTemplesById } from "../../Api/api"
+import Loader from "../common/Loader"
 
 const PersonalView = () => {
     const params = useParams()
@@ -18,6 +19,8 @@ const PersonalView = () => {
     const [inf, setInf] = useState(false)
     const [networkData, setNetworkData] = useState({})
     const [templename, setTemplename] = useState('')
+  const [loader,setLoader] = useState(true)
+
     const navigate = useNavigate()
     useEffect(() => {
         NetworkDataFetch()
@@ -33,6 +36,7 @@ const PersonalView = () => {
             .then((response) => {
                 setNetworkData(response.data)
                 setTemplename(response.data.data.name)
+                setLoader(false)
             })
             .catch((error) => console.log(error.message))
     }
@@ -63,9 +67,7 @@ const PersonalView = () => {
     }
     return (
         <>
-            {
-                console.log(networkData.data)
-            }
+           
             {
                 params.templeid === 'undefined' || !params.templeid ?
                     navigate('/') :
@@ -77,12 +79,12 @@ const PersonalView = () => {
                             hide={() => setInf(false)}
                         />
                         {
-                            networkData.status !== "success" ? <h1>No data</h1>
+                           loader ? <Loader/>
                                 :
                                 <>
-                                    <Row className="mt-3 mb-5 ms-xl-5">
+                                    <Row className="mt-5 mb-5 ms-xl-5 ">
                                         <Col xl={5} lg={5} xs={12}>
-                                            <Slider {...settings} className="mt-4 me-xl-5 ms-xl-5 mb-5">
+                                            <Slider {...settings} className="mt-4 me-xl-5 ms-xl-5 mb-5 ms-md-2 me-md-2">
                                                 {
                                                     networkData.data.image.map((value, index) =>
                                                         <div className="card p-0 border-0" key={index}>
@@ -93,7 +95,7 @@ const PersonalView = () => {
                                             </Slider>
                                         </Col>
                                         <Col xs={12} xl={5} lg={6}>
-                                            <div className="row mt-xl-4">
+                                            <div className="row mt-xl-4 ms-md-2">
                                                 <div className="col-12">
                                                     <label className="p-font">{networkData.data.name}</label>
                                                 </div>
@@ -109,11 +111,11 @@ const PersonalView = () => {
                                                 </div>
                                             </div>
                                             <ModalImgV pl={hItem} display={dis} />
-                                            <p style={{ color: '#44233B' }} className="fw-700">Select your Frame/Pillar</p>
-                                            <div className="row ms-xl-3 ms-3 mt-5">
-                                                {console.log(networkData.data.framename)}
+                                            <p style={{ color: '#44233B' }} className="fw-700 ms-md-3 mt-md-3">Select your Frame/Pillar</p>
+                                            <div className="row ms-xl-3 ms-3 mt-5 ">
                                                 {networkData.doc.map((v, i) =>
-                                                    <Col xl={2} xs={4} md={2} className="p-0" key={i}>
+                                                    <Col xl={networkData.doc.length >= 6 ? 2 : 3 }
+                                                     xs={4} md={2} className="p-0" key={i}>
                                                         <label
                                                             onMouseLeave={() => onHoverOutAction()}
                                                             onMouseEnter={() => onHoverAction(FrameLink + v.frameimage)}>
@@ -124,20 +126,25 @@ const PersonalView = () => {
                                                                 onChange={(e) =>
                                                                     setSelectedItem(e.target.value)
                                                                 } />
-                                                            <Image src={FrameLink + v.frameimage} height={88} width={82.43} />
+                                                            <Image 
+                                                            src={FrameLink + v.frameimage} 
+                                                            height={88}
+                                                             width={82.43} />
                                                             <p className="text-center fw-400 fs-12 mt-3">{v.framename}</p>
                                                         </label>
                                                     </Col>
                                                 )}
                                             </div>
                                             <div className="row justify-content-center">
-                                                <div className="col-9 col-xl-12 col-md-12 ms-md-5">
-                                                    <Button className=" mt-3 btn btn-primary" disabled={selectedItm ? false : true} onClick={() => setInf(true)}>Inquire Now</Button>
+                                                <div className="col-7 col-xl-12 col-md-6 ms-md-5">
+                                                    <Button className=" mt-3 btn btn-primary"
+                                                     disabled={selectedItm ? false : true}
+                                                      onClick={() => setInf(true)}>Inquire Now</Button>
                                                 </div>
                                             </div>
                                         </Col>
                                     </Row>
-                                    <Row className="mt-5 mb-5 me-xl-5 ms-xl-5">
+                                    <Row className="mt-5 mb-5 me-xl-5 ms-xl-5 ms-md-2">
                                         <Col>
                                             <label className="fw-bold list-font">Product Information</label>
                                             <ul className="mt-5">

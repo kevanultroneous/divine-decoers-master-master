@@ -266,7 +266,7 @@ padding: 0em 0em 0em 0em;
 }
 
 .fs-37 {
-  font-size: 37px;
+  font-size: 33px;
 }
 
 .fw-600 {
@@ -480,6 +480,7 @@ padding: 0em 0em 0em 0em;
 [type=radio]+img {
   cursor: pointer;
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
 }
 
 /* hover effect */
@@ -507,6 +508,12 @@ padding: 0em 0em 0em 0em;
 }
 
 @media only screen and (max-width: 600px) {
+  .Paddings-Top-Contain{
+    padding-top: 4em;
+  }
+  .m-mv {
+    margin-top: -50% !important;
+  }
   .overlay-m {
     position: absolute;
     height: 100%;
@@ -611,7 +618,7 @@ padding: 0em 0em 0em 0em;
 
   .under-content {
     padding-top: 50em;
-    margin-bottom: 13em;
+    margin-bottom: 12em;
   }
   .vector{
     display: none;
@@ -621,6 +628,20 @@ padding: 0em 0em 0em 0em;
 @media (min-width: 768px) and (max-width: 1024px) {
   .fs-37 {
     font-size: 18px;
+  }
+  .m-mv {
+    margin-top: -30% !important;
+  }
+  .back-image {
+    background-image: url("../images/mobile.png");
+    background-size:cover;
+    height: 100vh;
+    background-position: center;
+  }
+  .under-content {
+    justify-content: start;
+    padding-top: 100em;
+    margin-bottom: 15em;
   }
   .vector{
     display: none;
@@ -653,13 +674,6 @@ padding: 0em 0em 0em 0em;
     height: 350px;
   }
 
-  .background-home {
-    background-image: url("../images/mobile.png");
-    background-size: cover;
-    height: 100vh;
-    background-attachment: scroll;
-    background-position: center;
-  }
 
   #call-tab-mob {
     display: none;

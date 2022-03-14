@@ -1,5 +1,5 @@
 .Paragraph-size {
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 .User-Img {
@@ -7,7 +7,15 @@
 }
 @media only screen and (max-width: 600px) {
     .Paragraph-size{
-        font-size: 1em;
+        font-size: 1.1em;
+    }
+    .User-Img{
+        height: 4.5em;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    .Paragraph-size{
+        font-size: 1.3em;
     }
     .User-Img{
         height: 4.5em;

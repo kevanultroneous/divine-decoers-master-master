@@ -11,10 +11,15 @@ import ScrollToTop from "react-scroll-to-top";
 const DivineNavbar = () => {
   const [show, setShow] = useState(false)
   const [chngClr, setChmgClr] = useState(false)
+  const [ navExpanded,setNavExpanded] = useState(false)
+
   const handleClose = () => {
     setShow(false)
   }
   const changeNavbarColor = () => {
+    if(navExpanded){
+      setNavExpanded(false)
+    }
     if (window.scrollY >= 80) {
       setChmgClr(true)
     }
@@ -26,11 +31,14 @@ const DivineNavbar = () => {
   return (
     <>
       <Image src={call} id="myBtn" onClick={() => setShow(true)} />
-      <Navbar expand="lg"
+      <Navbar 
+        onToggle={()=>navExpanded ? setNavExpanded(false) : setNavExpanded(true)}
+      expand="lg"
+       expanded={navExpanded}
         style={{ background: chngClr ? '#FFEFE2' : 'none', transition: '0.5s' }} fixed="top">
         <Container fluid className="p-xl-3 p-md-3 p-lg-3 p-3">
           <Link to="/" className="text-decoration-none">
-            <Navbar.Brand href="#" className="ms-md-5 ms-xs-1 ms-xl-5 ms-lg-5">
+            <Navbar.Brand href="#" className="ms-md-1 ms-xs-1 ms-xl-5 ms-lg-5 ms-1">
               <Image src={logo} className="icon-size" />
             </Navbar.Brand>
           </Link>

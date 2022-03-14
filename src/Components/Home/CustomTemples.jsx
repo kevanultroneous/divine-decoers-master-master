@@ -2,19 +2,23 @@ import { useEffect, useState } from "react";
 import { Col, Image, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { getTemplesForLimit } from "../../Api/api";
+import Loader from "../../Components/common/Loader"
 import { customTempleList, TempleLink } from "../../common/common";
 import LabelOfContent from "../common/LabelOfContent";
 import ProductCard from "../Products/ProductCard";
 const CustomTemples = () => {
   const navigate = useNavigate()
   const [templeData,setTempleData] = useState([])
-
+  const [loader,setLoader] = useState(true)
   useEffect(()=>{
     TemplesApi()
   },[])
   const TemplesApi = () =>{
     getTemplesForLimit()
-    .then((response)=>setTempleData(response.data.data))
+    .then((response)=>{
+      setTempleData(response.data.data)
+      setLoader(false)
+    })
     .catch((error)=>console.log(error))
   }
   
@@ -26,7 +30,7 @@ const CustomTemples = () => {
       <LabelOfContent title={"Custom Temples"} />
       <Row className="justify-content-center mx-lg-5">
         {
-          templeData ? 
+          loader ? <Loader /> :
           templeData.map((value, index) =>
             <ProductCard
               iditem={value._id}
@@ -36,7 +40,7 @@ const CustomTemples = () => {
               price={value.price}
             />
           )
-          : <h1>No data</h1>
+          
         }
       </Row>
       <Row className="text-center mt-5">
