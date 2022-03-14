@@ -52,7 +52,7 @@ const CustomTemplePage = () => {
                         <ProductCard
                             iditem={value._id}
                             key={index}
-                            image={"http://192.168.29.42:8000/public/temples/"+value.image[0]}
+                            image={"http://192.168.1.28:8000/public/temples/"+value.image[0]}
                             name={value.name}
                             price={value.price}
                         />
@@ -64,7 +64,7 @@ const CustomTemplePage = () => {
                     <div className="btn btn-primary" onClick={() => SeeMore()} style={{display:btnS}}>See More</div>
                 </Col>
             </Row>
-            <Footer />
+            {/* <Footer /> */}
                 </>
              }
         </Container>

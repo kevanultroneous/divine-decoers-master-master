@@ -4,6 +4,9 @@
   font-family: "Montserrat", sans-serif;
   cursor: url('../images/droplet.svg');
 }
+body{
+  background-color: #FFEFE2;
+}
 .Paddings-Top-Contain{
   padding-top: 6em;
 }

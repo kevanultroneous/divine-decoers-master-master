@@ -21,6 +21,7 @@ const PersonalView = () => {
     const navigate = useNavigate()
     useEffect(() => {
      NetworkDataFetch()
+     console.log(networkData)
     }, [])
     const NetworkDataFetch = () => {
        GetTempleById(params.templeid)
@@ -76,7 +77,7 @@ const PersonalView = () => {
                                                 {
                                                     networkData.data.image.map((value, index) =>
                                                         <div className="card p-0 border-0" key={index}>
-                                                            <Image src={"http://192.168.29.42:8000/public/temples/"+value} className="card-img-top" alt="" />
+                                                            <Image src={value} className="card-img-top" alt="" />
                                                         </div>
                                                     )
                                                 }
