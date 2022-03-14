@@ -674,13 +674,10 @@ padding: 0em 0em 0em 0em;
 .loaders-contain {
   box-sizing: border-box;
   inset: 0px;
-  height: 100vh;
-  background-color:#F8CCC2;
-  color: rgb(232, 232, 232);
   font-size: large;
   line-height: 1.2;
   white-space: pre-wrap;
-  overflow: auto;
+  overflow:hidden;
   text-align: center;
   z-index: 1;
 }

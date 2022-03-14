@@ -4,15 +4,14 @@ import {Spinner} from "react-bootstrap"
 const Loader = () => {
     return (
          <div className = "loaders-contain" >
-            
+
              <div style={{
-                 height:'100%',
+                 height:'100vh',
                  display:'flex',
                  alignItems:'center',
                  justifyContent:'center',
-                 transition:'4s'
              }}>
-<Spinner animation="border" variant="secondary" size="lg" />
+<Spinner animation="border" variant="secondary"/>
              </div>
         </div>
          )
