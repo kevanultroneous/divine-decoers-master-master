@@ -28,7 +28,7 @@ const TestiMonial = () => {
         </Col>
       </Row>
       <Row className="justify-content-center">
-        <Col xl="12" xs={12} md={12} className="mt-4 me-xl-5 ms-xl-5 mb-5">
+        <Col xl={12} xs={12} md={12} className="mt-4 me-xl-5 ms-xl-5 mb-5">
           <Slider {...settings} ref={sliderRef}>
             {
               ListForSlider.map((v,i) =>

@@ -58,7 +58,7 @@ const RelatedItem = () => {
                         <div className="col-8 col-xl-8 col-lg-8 col-md-8 col-xs-6 position-absolute bottom-0 mb-2 text-white fw-700 fs-15">
                           {value.name}
                         </div>
-                        <div className="col-4 col-xl-4 col-lg-4 col-md-4  position-absolute bottom-0 end-0 text-end mb-2 text-white fw-700 fs-15">
+                        <div className="col-4 col-xl-4 col-lg-4 col-md-4  position-absolute bottom-0 end-0 text-end mb-2 text-white fw-700 fs-15 ps-0">
                           {value.price}$
                         </div>
                       </div>

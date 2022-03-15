@@ -95,7 +95,7 @@ const PersonalView = () => {
                                                 }
                                             </Slider>
                                         </Col>
-                                        <Col xs={12} xl={5} lg={6}>
+                                        <Col xs={12} xl={6} lg={6}>
                                             <div className="row mt-xl-4 ms-md-2">
                                                 <div className="col-12">
                                                     <label className="p-font">{networkData.data.name}</label>
@@ -116,7 +116,7 @@ const PersonalView = () => {
                                             <div className="row ms-xl-3 ms-3 mt-5 ">
                                                 {networkData.doc.map((v, i) =>
                                                     <Col xl={networkData.doc.length >= 6 ? 2 : 3 }
-                                                     xs={4} md={2} className="p-0" key={i}>
+                                                     xs={4} md={2}  className="p-0" key={i}>
                                                         <label
                                                             onMouseLeave={() => onHoverOutAction()}
                                                             onMouseEnter={() => onHoverAction(FrameLink + v.frameimage)}>

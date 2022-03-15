@@ -34,18 +34,20 @@ const OffCanvasComp = (props) => {
             </p>
           </Col>
         </Row>
-        <Row className="mt-5 ms-3">
-          <Col>
-            <p className="m-0">Whats app</p>
-            <p>+61 403 260 924</p>
-          </Col>
-        </Row>
-        <Row>
-          <Col className="mt-3 ms-4">
-            <p className="m-0">Call</p>
-            <p>+61 403 260 924</p>
-          </Col>
-        </Row>
+        <div className="pt-5">
+          <Row className="mt-5 ms-3">
+            <Col>
+              <p className="m-0">Whats app</p>
+              <p>+61 403 260 924</p>
+            </Col>
+          </Row>
+          <Row>
+            <Col className="mt-3 ms-4">
+              <p className="ms-2 mb-0">Call</p>
+              <p className="m-0">+61 403 260 924</p>
+            </Col>
+          </Row>
+        </div>
       </Offcanvas.Body>
     </Offcanvas>
   )

@@ -47,7 +47,7 @@ const DivineNavbar = () => {
           </Navbar.Toggle>
           <Navbar.Collapse id="navbarScroll">
             <Nav className="ms-auto my-2 my-lg-0 nav-fonts" navbarScroll>
-              <Link to="/" className="text-decoration-none">
+              <Link to="/" className="text-decoration-none link-a-nav">
                 <Nav.Link href="/" className="nav-link-clr me-xl-5 me-md-5 me-lg-5">
                   Home
                 </Nav.Link>

@@ -4,7 +4,8 @@ import ReactStars from "react-rating-stars-component"
 import "./../../Assets/css/Testimonial.css"
 const CardForTesti = (props) => {
     return (
-        <Card style={{ background: '#FFEFE2'}} className="ms-xl-5 ms-1 me-1 me-xl-5 ms-md-3 me-md-3 card-border border-0 shadow mt-3 mb-4 p-4 p-md test-height">
+        <Card style={{ background: '#FFEFE2'}}
+         className="ms-xl-5 ms-1 me-1 me-xl-5 ms-md-3 me-md-3 card-border border-0 shadow mt-3 mb-4 pt-3 ps-2 pb-3 pe-2 p-md test-height">
             <Card.Body className="h-100">
                 <Card.Title>
                     <Image src={comma} />
@@ -15,10 +16,10 @@ const CardForTesti = (props) => {
             </Card.Body>
             <Card.Footer className="border-0 bg-transparent">
                 <Row>
-                    <Col xl={4} xs={4} md={2} lg={6}>
+                    <Col xl={3} xs={4} md={2} lg={6}>
                         <Image src={props.user} className="User-Img"/>
                     </Col>
-                    <Col xl={8} xs={8} md={8} lg={6}>
+                    <Col xl={9} xs={8} md={8} lg={6}>
                         <Row>
                             <Col xl={12} xs={12} md={12} lg={12}>
                                 <label className="carousel-label">{props.username}</label>

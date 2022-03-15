@@ -143,10 +143,10 @@ export const customTempleList2 = [
 ];
 export const ListForSlider = [
   {
-    paragraph: "I needed a temple for my new home and I wanted my Mandir to be customized according to the architecture of the home. I was really confused and then I came across divine decores. Their budget-friendly pricing and custom options helped match the expectations of what I wanted.",
-    username: "Bhagat Zaveri, New Queensland",
+    paragraph:"Got Divine decores reference from a close relative as we wanted a mandir for our home. We went out there and after looking  at  different mandirs we not only ordered the mandir but infarct decided to buy some more items like wall hangings",
+    username: "Shiv Mulchandani,  Sydeny",
     rating: 5,
-    icon: user
+    icon: user5
   },
   {
     paragraph: "For the past many months, I was looking for a Derasar but could not find the one I wanted. I had my preparation done to import it from India but then our relative suggested us this website and then after going through the designs we decided to buy it from here.",
@@ -173,11 +173,11 @@ export const ListForSlider = [
     icon: user3
   },
   {
-    paragraph:"Got Divine decores reference from a close relative as we wanted a mandir for our home. We went out there and after looking  at  different mandirs we not only ordered the mandir but infarct decided to buy some more items like wall hangings",
-    username: "Shiv Mulchandani,  Sydeny",
+    paragraph: "I needed a temple for my new home and I wanted my Mandir to be customized according to the architecture of the home. I was really confused and then I came across divine decores. Their budget-friendly pricing and custom options helped match the expectations of what I wanted.",
+    username: "Bhagat Zaveri,New Queensland",
     rating: 5,
-    icon: user5
-  }
+    icon: user
+  },
 ]
 export const personalViewList = {
   images: [image, image, image, image, image],
