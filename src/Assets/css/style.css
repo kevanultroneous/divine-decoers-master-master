@@ -526,18 +526,26 @@ body {
 .test-height {
   height: 25em;
 }
-
+@media  (min-width:800) and (max-width: 1180px) {
+  .under-content {
+    padding-top: 30em;
+    margin-bottom: 12em;
+  }
+}
 @media only screen and (max-width: 600px) {
   .Paddings-Top-Contain {
     padding-top: 4em;
   }
-  .Padding-Title{
+
+  .Padding-Title {
     padding-top: 2em;
   }
+
   .icon-size {
     width: 100px;
     height: 40px;
-}
+  }
+
   .m-mv {
     margin-top: -50% !important;
   }
@@ -648,7 +656,7 @@ body {
   .under-content {
     padding-top: 30em;
     margin-bottom: 12em;
-}
+  }
 
   .vector {
     display: none;
@@ -726,6 +734,11 @@ body {
     color: #DB4242;
     font-weight: 700;
     font-size: 16px;
+  }
+
+  .under-content {
+    padding-top: 58em;
+    margin-bottom: 12em;
   }
 }
 
@@ -873,17 +886,21 @@ body {
   .carousel-label {
     font-size: 0.8em;
   }
+
   .back-image {
     background-position: left;
-}
+  }
+
   .m-mv {
     margin-top: -16.2%;
   }
 }
+
 @media screen and (max-width: 1440px) {
   .m-mv {
     margin-top: -15%;
   }
+
   /* .back-image {
     background-position: unset;
 } */

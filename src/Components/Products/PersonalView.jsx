@@ -137,8 +137,8 @@ const PersonalView = () => {
                                                 )}
                                             </div>
                                             <div className="row justify-content-center">
-                                                <div className="col-7 col-xl-12 col-md-6 ms-md-5">
-                                                    <Button className=" mt-3 btn btn-primary"
+                                                <div className="d-flex justify-content-center justify-content-xl-start ">
+                                                    <Button className=" mt-3 btn btn-primary ms-xl-3"
                                                      disabled={selectedItm ? false : true}
                                                       onClick={() => setInf(true)}>Inquire Now</Button>
                                                 </div>

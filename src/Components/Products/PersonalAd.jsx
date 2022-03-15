@@ -2,8 +2,8 @@ import { Col, Image, Row } from "react-bootstrap"
 import mandir from "../../Assets/images/mandir.png"
 const PersonalAd = () => {
     return (
-        <Row className="footer-back  justify-content-center mt-4 pb-1">
-            <Col xs={10} xl={4} md={6} lg={6} className="mt-3  mb-3 m-xl-0">
+        <Row className="footer-back  justify-content-center mt-2 pb-1">
+            <Col xs={11} xl={4} md={6} lg={6} className="mt-3  mb-3 m-xl-0">
                 <Image src={mandir} />
             </Col>
             <Col xs={12} xl={6} md={6} lg={6} className="mt-0 mt-md-5 mt-xl-5 mb-3 m-xl-0">
