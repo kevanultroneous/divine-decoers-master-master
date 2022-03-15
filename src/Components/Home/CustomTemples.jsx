@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Col, Image, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { getTemplesForLimit } from "../../Api/api";
 import Loader from "../../Components/common/Loader"
-import { customTempleList, TempleLink } from "../../common/common";
+import { TempleLink } from "../../common/common";
 import LabelOfContent from "../common/LabelOfContent";
 import ProductCard from "../Products/ProductCard";
 const CustomTemples = () => {
@@ -19,7 +19,7 @@ const CustomTemples = () => {
       setTempleData(response.data.data)
       setLoader(false)
     })
-    .catch((error)=>console.log(error))
+    .catch((error)=>alert(error.message))
   }
   
   const handleNavigate = () => {

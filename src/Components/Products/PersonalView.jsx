@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react"
 import { Button, Col, Image, Row } from "react-bootstrap"
-import { FrameLink, personalViewList, sliderRes, TempleLink } from "../../common/common"
+import { FrameLink, sliderRes, TempleLink } from "../../common/common"
 import Slider from "react-slick/lib/slider"
 import InquireForm from "./InquireForm"
 import rightA from "../../Assets/images/r-a.png"
 import leftA from "../../Assets/images/l-a.png"
 import { useNavigate, useParams } from "react-router-dom"
-import { GetTempleById, getTemplesById } from "../../Api/api"
+import { GetTempleById } from "../../Api/api"
 import Loader from "../common/Loader"
 
 const PersonalView = () => {
     const params = useParams()
-    const [product_information, setProduct_information] = useState(personalViewList.information)
-    const [sliderArray, setSliderArray] = useState(personalViewList.images)
+    // const [product_information, setProduct_information] = useState(personalViewList.information)
+    // const [sliderArray, setSliderArray] = useState(personalViewList.images)
     const [selectedItm, setSelectedItem] = useState('')
     const [hItem, setHItem] = useState('')
     const [dis, setDis] = useState('none')
@@ -24,12 +24,12 @@ const PersonalView = () => {
     const navigate = useNavigate()
     useEffect(() => {
         NetworkDataFetch()
-        console.log(networkData)
+        // console.log(networkData)
     }, [])
     useEffect(() => {
         NetworkDataFetch()
         window.scrollTo(0, 0)
-        console.log(networkData)
+        // console.log(networkData)
     }, [params])
     const NetworkDataFetch = () => {
         GetTempleById(params.templeid)
@@ -38,7 +38,7 @@ const PersonalView = () => {
                 setTemplename(response.data.data.name)
                 setLoader(false)
             })
-            .catch((error) => console.log(error.message))
+            .catch((error) => alert(error.message))
     }
     const settings = {
         dots: true,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Col, Container, Image, Row } from "react-bootstrap"
-import { getTemples, getTemplesPagignate } from "../Api/api";
+import { Col, Container,  Row } from "react-bootstrap"
+import {  getTemplesPagignate } from "../Api/api";
 import { TempleLink } from "../common/common";
 import Footer from "../Components/common/Footer";
 import LabelOfContent from "../Components/common/LabelOfContent";
@@ -25,7 +25,7 @@ const CustomTemplePage = () => {
                 setLoader(false)
             })
             .catch((error) => {
-                console.log(error)
+                alert(error.message)
             })
     }
     const SeeMore = () => {
@@ -34,7 +34,7 @@ const CustomTemplePage = () => {
     useEffect(() => {
         getTemplesPagignate(page, 8)
             .then((response) => setTempleData(templeData.concat(response.data.data)))
-            .catch((error) => console.log(error))
+            .catch((error) => alert(error))
     }, [page])
 
     return (
