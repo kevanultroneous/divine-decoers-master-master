@@ -33,6 +33,7 @@ const CardForTesti = (props) => {
                                     size={25}
                                     classNames="carousel-star"
                                     isHalf={true}
+                                    activeColor="#FF7A00"
                                 />
                             </Col>
                         </Row>

@@ -21,11 +21,19 @@ const PersonalView = () => {
     const [templename, setTemplename] = useState('')
   const [loader,setLoader] = useState(true)
     const catchId = findId(params.templeid)
-    
+    const [dval,setDval] = useState('')
     const navigate = useNavigate()
+    useEffect(()=>{
+        window.addEventListener('scroll',(event)=>{
+            if(window.scrollY > 636){
+                setDval('23% !important')
+            }
+        })
+    },)
     useEffect(() => {
         NetworkDataFetch()
         // console.log(networkData)
+        
     }, [])
     useEffect(() => {
         NetworkDataFetch()
@@ -61,7 +69,7 @@ const PersonalView = () => {
     }
     const ModalImgV = (p) => {
         return (
-            <div className="mv position-absolute m-mv" style={{ display: p.display }}>
+            <div className="mv position-absolute m-mv" style={{ display: p.display ,marginTop:p.dymicdown}}>
                 <Image src={p.pl} height={250} />
             </div>
         )
@@ -111,7 +119,7 @@ const PersonalView = () => {
                                                     <p className="p-sub-para w-100">{networkData.data.information}</p>
                                                 </div>
                                             </div>
-                                            <ModalImgV pl={hItem} display={dis} />
+                                            <ModalImgV pl={hItem} display={dis} dymicdown={dval}/>
                                             <p style={{ color: '#44233B' }} className="fw-700 ms-md-3 mt-md-3">Select your Frame/Pillar</p>
                                             <div className="row ms-xl-3 ms-3 mt-5 ">
                                                 {networkData.doc.map((v, i) =>
@@ -147,9 +155,9 @@ const PersonalView = () => {
                                     </Row>
                                     <Row className="mt-5 mb-5 me-xl-5 ms-xl-5 ms-md-2">
                                         <Col>
-                                            <label className="fw-bold list-font">Product Information</label>
+                                            <label className="fw-bold list-font ms-xl-5">Product Information</label>
                                             <ul className="mt-5">
-                                                {networkData.data.productInformation.map((v, i) => <li className="list-font" key={i}>{v}</li>)}
+                                                {networkData.data.productInformation.map((v, i) => <li className="list-font ms-xl-5" key={i}>{v}</li>)}
                                             </ul>
                                         </Col>
                                     </Row>

@@ -10,7 +10,7 @@ body {
 }
 
 .Paddings-Top-Contain {
-  padding-top: 6em;
+  padding-top: 1em;
 }
 
 .Paddings-Top-Contain2 {
@@ -344,6 +344,7 @@ body {
   width: 0px;
   margin-top: 0.8em;
   height: 15px;
+  background-color: #F5BCB3;
   border: 1px solid #F5BCB3;
 }
 
