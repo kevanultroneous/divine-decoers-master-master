@@ -531,7 +531,13 @@ body {
   .Paddings-Top-Contain {
     padding-top: 4em;
   }
-
+  .Padding-Title{
+    padding-top: 2em;
+  }
+  .icon-size {
+    width: 100px;
+    height: 40px;
+}
   .m-mv {
     margin-top: -50% !important;
   }
@@ -591,12 +597,13 @@ body {
   }
 
   .back-image {
-    background-image: url('../images/mobile.png');
+    background-image: url("../images/mobile-img.jpg");
     background-size: cover;
-    height: 50vh;
+    height: 70vh;
     background-attachment: scroll;
     background-position: center !important;
-}
+  }
+
   #call-tab-mob {
     display: none;
   }
@@ -639,9 +646,9 @@ body {
   }
 
   .under-content {
-    padding-top: 50em;
+    padding-top: 30em;
     margin-bottom: 12em;
-  }
+}
 
   .vector {
     display: none;
