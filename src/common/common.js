@@ -14,7 +14,7 @@ export const findId = (str) =>{
   return k2;
 }
 const apiUrl1 = "http://192.168.1.28:8000/"
-const apiUrl2 = "http://192.168.29.42:8000/"
+// const apiUrl2 = "http://192.168.29.42:8000/"
 export const TempleLink = apiUrl1+"temples/"
 export const FrameLink = apiUrl1+"frames/"
 export const customTempleList = [

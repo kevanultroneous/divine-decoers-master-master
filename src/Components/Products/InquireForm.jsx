@@ -3,7 +3,7 @@ import { Button, Col, Image, Modal, Row } from "react-bootstrap"
 import close from "../../Assets/images/close.png"
 import validator from 'validator';
 import { InquireNow } from "../../Api/api";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import PhoneInput from "react-phone-input-2";
 import 'react-phone-input-2/lib/style.css'
 const Inputs = (p) => {
@@ -33,7 +33,7 @@ const InquireForm = (props) => {
     const [name, setName] = useState('')
     const [mail, setMail] = useState('')
     const [number, setNumber] = useState('')
-    const [frame, setFrame] = useState('')
+    // const [frame, setFrame] = useState('')
     const [width, setWidth] = useState('')
     const [height, setHeight] = useState('')
     const [Depth, setDepth] = useState('')
@@ -42,7 +42,7 @@ const InquireForm = (props) => {
     const [nameE, setNameE] = useState('none')
     const [mailE, setMailE] = useState('none')
     const [numberE, setNumberE] = useState('none')
-    const [frameE, setFrameE] = useState('none')
+    // const [frameE, setFrameE] = useState('none')
     const [sizeE, setSizeE] = useState('none')
     const [desE, setDesE] = useState('none')
     const InquireApi = () => {
@@ -109,7 +109,7 @@ const InquireForm = (props) => {
         setName('')
         setMail('')
         setNumber('')
-        setFrame('')
+        // setFrame('')
         setHeight('')
         setWidth('')
         setDepth('')
@@ -125,6 +125,7 @@ const InquireForm = (props) => {
     }
     return (
         <Modal
+            onHide={props.hide}
             show={props.showIm}
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"

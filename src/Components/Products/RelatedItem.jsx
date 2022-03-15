@@ -3,7 +3,7 @@ import { Col, Image, Row } from "react-bootstrap"
 import { Link } from "react-router-dom";
 import Slider from "react-slick/lib/slider";
 import { getTemplesForLimit } from "../../Api/api";
-import { customTempleList, sliderRes, TempleLink } from "../../common/common";
+import { sliderRes, TempleLink } from "../../common/common";
 import LabelWithChild from "../common/LabelWithChild";
 import Loader from "../common/Loader";
 
@@ -12,7 +12,6 @@ const RelatedItem = () => {
 
   const [templeData,setTempleData] = useState([])
   const [loader,setLoader] = useState(true)
-
   useEffect(()=>{
     TemplesApi()
   },[])
@@ -23,7 +22,7 @@ const RelatedItem = () => {
       setTempleData(response.data.data)
       setLoader(false)
     })
-    .catch((error)=>console.log(error))
+    .catch((error)=>alert(error.message))
   }
   const settings = {
     dots: false,

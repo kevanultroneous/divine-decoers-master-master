@@ -1,5 +1,5 @@
 import axios from "axios";
-const api1  = "http://192.168.29.42:8000/api/"
+// const api1  = "http://192.168.29.42:8000/api/"
 const MainUrl = "http://192.168.1.28:8000/api/"
 axios.defaults.baseURL = MainUrl
 
