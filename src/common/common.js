@@ -15,8 +15,8 @@ export const findId = (str) =>{
 }
 const apiUrl1 = "http://192.168.1.28:8000/"
 const apiUrl2 = "http://192.168.29.42:8000/"
-export const TempleLink = apiUrl2+"temples/"
-export const FrameLink = apiUrl2+"frames/"
+export const TempleLink = apiUrl1+"temples/"
+export const FrameLink = apiUrl1+"frames/"
 export const customTempleList = [
   {
     image: image,
