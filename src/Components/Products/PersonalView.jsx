@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { Button, Col, Image, Row } from "react-bootstrap"
-import { FrameLink, sliderRes, TempleLink } from "../../common/common"
+import { findId, FrameLink, sliderRes, TempleLink } from "../../common/common"
 import Slider from "react-slick/lib/slider"
 import InquireForm from "./InquireForm"
 import rightA from "../../Assets/images/r-a.png"
@@ -20,7 +20,8 @@ const PersonalView = () => {
     const [networkData, setNetworkData] = useState({})
     const [templename, setTemplename] = useState('')
   const [loader,setLoader] = useState(true)
-
+    const catchId = findId(params.templeid)
+    
     const navigate = useNavigate()
     useEffect(() => {
         NetworkDataFetch()
@@ -32,7 +33,7 @@ const PersonalView = () => {
         // console.log(networkData)
     }, [params])
     const NetworkDataFetch = () => {
-        GetTempleById(params.templeid)
+        GetTempleById(catchId)
             .then((response) => {
                 setNetworkData(response.data)
                 setTemplename(response.data.data.name)

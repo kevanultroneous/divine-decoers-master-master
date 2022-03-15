@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Col, Image, Row } from "react-bootstrap"
 import { Link } from "react-router-dom";
 import Slider from "react-slick/lib/slider";
+import slugify from "slugify";
 import { getTemplesForLimit } from "../../Api/api";
 import { sliderRes, TempleLink } from "../../common/common";
 import LabelWithChild from "../common/LabelWithChild";
@@ -49,7 +50,7 @@ const RelatedItem = () => {
             <Slider {...settings} ref={sliderRef} className="mt-4 me-xl-5 ms-xl-5 me-md-5 ms-md-5 mb-5">
               {
                 templeData.map((value, index) =>
-                <Link to={`/viewitem/${value._id}`}>
+                <Link to={`/viewitem/${slugify(value.name+" "+value._id,'-')}`}>
                   <div className="card p-0 border-0 w-75 w-xl-100 w-md-100">
                     <Image src={TempleLink+value.image[0]} className="card-img-top" style={{borderRadius:'12px'}} />
                     <div className="card-img-overlay overlay overlay-m">
