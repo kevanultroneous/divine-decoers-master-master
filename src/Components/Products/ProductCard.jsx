@@ -5,9 +5,7 @@ import slugify from "slugify"
 const ProductCard = (value) => {
   return (
     <div className="col-lg-6 mt-lg-5 mt-xl-4 mt-3 mt-md-4 col-md-5 col-xl-3 ">
-      {
-        console.log(slugify('hello','-'))
-      }
+
       <Link to={`/viewitem/${slugify(value.name+" "+value.iditem,'-')}`}>
         <div className="card p-0 border-0 w-100">
           <Image src={value.image} className="card-img-top" alt="" style={{borderRadius:'12px'}} />

@@ -26,7 +26,9 @@ const PersonalView = () => {
     useEffect(()=>{
         window.addEventListener('scroll',(event)=>{
             if(window.scrollY > 636){
-                setDval('23% !important')
+                setDval('23%')
+            }else{
+                setDval('')
             }
         })
     },)

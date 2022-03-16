@@ -14,6 +14,7 @@ const CustomTemplePage = () => {
     const [dataCount,setDataCount] = useState(0)
     const [btnS,setBtnS] = useState('')
     const [loader,setLoader] = useState(true)
+    const [currentTotal,setCurrentTotal] = useState(0)
     useEffect(() => {
         TemplesApi()
     }, [])
@@ -23,6 +24,7 @@ const CustomTemplePage = () => {
                 setDataCount(response.data.total_documents)
                 setTempleData(response.data.data)
                 setLoader(false)
+                console.log(response.data.data.length)
             })
             .catch((error) => {
                 alert(error.message)
@@ -35,10 +37,11 @@ const CustomTemplePage = () => {
         getTemplesPagignate(page, 8)
             .then((response) => setTempleData(templeData.concat(response.data.data)))
             .catch((error) => alert(error))
+           
     }, [page])
-
+    // console.log(templeData.length === dataCount ? )
     return (
-        <Container fluid className="back-contain Paddings-Top-Contain">
+        <Container fluid className="back-contain Paddings-Top-Contain-P">
             {
                loader ? 
                 <Loader/>
@@ -61,7 +64,7 @@ const CustomTemplePage = () => {
             </Row>
             <Row className="text-center mt-5 mb-5">
                 <Col lg="12">
-                    <div className="btn btn-primary" onClick={() => SeeMore()} style={{display:btnS}}>See More</div>
+                    <div className="btn btn-primary" onClick={() => SeeMore()} style={{display: templeData.length === dataCount ? 'none' : ''}}>See More</div>
                 </Col>
             </Row>
             <Footer />

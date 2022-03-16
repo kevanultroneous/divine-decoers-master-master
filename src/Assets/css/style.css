@@ -12,7 +12,9 @@ body {
 .Paddings-Top-Contain {
   padding-top: 1em;
 }
-
+.Paddings-Top-Contain-P {
+  padding-top: 7em;
+}
 .Paddings-Top-Contain2 {
   padding-top: 6em;
 }
@@ -65,7 +67,9 @@ body {
   background-image: url('../images/background.png');
   background-size: cover;
 }
-
+.offcanvas-contact-list-padding{
+  padding-top: 10em;
+}
 .background-home {
   background-image: url("../images/background.png");
   background-size: cover;
@@ -159,7 +163,7 @@ body {
 }
 
 .border-label {
-  width: 215px;
+  width: 108px;
   background-color: #44243b;
   border: 2px solid #44243b;
   margin-bottom: 10px;
@@ -317,8 +321,9 @@ body {
 }
 
 .para-divider {
-  margin: 27px;
-  text-align: justify;
+  margin: 24px;
+  text-align:left;
+  /* text-align: justify; */
 }
 
 .card-imgs {
@@ -893,7 +898,7 @@ body {
   }
 
   .m-mv {
-    margin-top: -16.2%;
+    margin-top: -17.2%;
   }
 }
 
