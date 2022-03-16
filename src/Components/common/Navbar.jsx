@@ -88,18 +88,18 @@ const DivineNavbar = () => {
                 <Nav.Link href="/customtemples" className="me-xl-5 me-md-5 me-lg-5">Products</Nav.Link>
               </Link>
               <Nav.Link href="http://localhost:3000/#about" className="pt-xl-0 pt-lg-0">About Us</Nav.Link>
-              <div className="vector ms-5 me-3" />
+              <div className="vector ms-5" />
 
-              <Nav.Link href="https://www.facebook.com/divinedecores/ " className="fs-20" target="_blank">
+              <Nav.Link href="https://www.facebook.com/divinedecores/ " className="fs-20 ps-4 pe-3" target="_blank">
                 <FaFacebookF />
               </Nav.Link>
 
-              <Nav.Link href="https://www.instagram.com/divinedecores/" className="fs-20" target="_blank">
+              <Nav.Link href="https://www.instagram.com/divinedecores/" className="fs-20 ps-0 pe-4" target="_blank">
                 <AiFillInstagram />
               </Nav.Link>
 
 
-              <div className="vector me-5 ms-4" />
+              <div className="vector me-5 ms-2" />
               <Nav.Link onClick={() => setShow(true)} className="p-0 me-xl-5" id="call-tab-mob">
                 <Image src={call} height="45" />
               </Nav.Link>

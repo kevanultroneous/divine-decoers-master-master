@@ -54,8 +54,8 @@ const RelatedItem = () => {
               
                 <Link to={`/viewitem/${value._id}`}>
                   <div className="card p-0 border-0 w-75 w-xl-100 w-md-100">
-                    {console.log(value.image[0])}
-                    <Image src={TempleLink+value.image[0]} className="card-img-top" style={{borderRadius:'12px'}} />
+                    {/* {console.log(value.image[0])} */}
+                    <Image src={value.image[0]} className="card-img-top" style={{borderRadius:'12px'}} />
                     <div className="card-img-overlay overlay overlay-m">
                       <div className="row">
                         <div className="col-8 col-xl-8 col-lg-8 col-md-8 col-xs-6 position-absolute bottom-0 mb-2 text-white fw-700 fs-15">

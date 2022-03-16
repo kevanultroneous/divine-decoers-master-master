@@ -19,23 +19,23 @@ const PersonalView = () => {
     const [inf, setInf] = useState(false)
     const [networkData, setNetworkData] = useState({})
     const [templename, setTemplename] = useState('')
-    const [loader,setLoader] = useState(true)
+    const [loader, setLoader] = useState(true)
     const catchId = findId(params.templeid)
-    const [dval,setDval] = useState('')
+    const [dval, setDval] = useState('')
     const navigate = useNavigate()
-    useEffect(()=>{
-        window.addEventListener('scroll',(event)=>{
-            if(window.scrollY > 636){
+    useEffect(() => {
+        window.addEventListener('scroll', (event) => {
+            if (window.scrollY > 636) {
                 setDval('17%')
-            }else{
+            } else {
                 setDval('')
             }
         })
-    },)
+    })
     useEffect(() => {
         NetworkDataFetch()
         // console.log(networkData)
-        
+
     }, [])
     useEffect(() => {
         NetworkDataFetch()
@@ -71,14 +71,14 @@ const PersonalView = () => {
     }
     const ModalImgV = (p) => {
         return (
-            <div className="mv position-absolute m-mv" style={{ display: p.display ,marginTop:p.dymicdown}}>
+            <div className="mv position-absolute m-mv" style={{ display: p.display, marginTop: p.dymicdown }}>
                 <Image src={p.pl} height={300} />
             </div>
         )
     }
     return (
         <>
-           
+
             {
                 params.templeid === 'undefined' || !params.templeid ?
                     navigate('/') :
@@ -90,7 +90,7 @@ const PersonalView = () => {
                             hide={() => setInf(false)}
                         />
                         {
-                           loader ? <Loader/>
+                            loader ? <Loader />
                                 :
                                 <>
                                     <Row className="mt-5 mb-5 ">
@@ -99,7 +99,7 @@ const PersonalView = () => {
                                                 {
                                                     networkData.data.image.map((value, index) =>
                                                         <div className="card p-0 border-0" key={index}>
-                                                            <Image src={TempleLink + value} className="card-img-top" alt="" />
+                                                            <Image src={value} className="card-img-top" alt="" />
                                                         </div>
                                                     )
                                                 }
@@ -121,15 +121,15 @@ const PersonalView = () => {
                                                     <p className="p-sub-para w-100">{networkData.data.information}</p>
                                                 </div>
                                             </div>
-                                            <ModalImgV pl={hItem} display={dis} dymicdown={dval}/>
+                                            <ModalImgV pl={hItem} display={dis} dymicdown={dval} />
                                             <p style={{ color: '#44233B' }} className="fw-700 ms-md-3 mt-md-3">Select your Frame/Pillar</p>
                                             <div className="row ms-xl-3 ms-3 mt-5 ">
                                                 {networkData.doc.map((v, i) =>
                                                     <Col xl={2}
-                                                     xs={4} md={2}  className="p-0" key={i}>
+                                                        xs={4} md={2} className="p-0" key={i}>
                                                         <label
                                                             onMouseLeave={() => onHoverOutAction()}
-                                                            onMouseEnter={() => onHoverAction(FrameLink + v.frameimage)}>
+                                                            onMouseEnter={() => onHoverAction(v.frameimage)}>
                                                             <input
                                                                 type="radio"
                                                                 name="test"
@@ -137,10 +137,10 @@ const PersonalView = () => {
                                                                 onChange={(e) =>
                                                                     setSelectedItem(e.target.value)
                                                                 } />
-                                                            <Image 
-                                                            src={FrameLink + v.frameimage} 
-                                                            height={88}
-                                                             width={82.43} />
+                                                            <Image
+                                                                src={v.frameimage}
+                                                                height={88}
+                                                                width={82.43} />
                                                             <p className="text-center fw-400 fs-12 mt-3">{v.framename}</p>
                                                         </label>
                                                     </Col>
@@ -149,8 +149,8 @@ const PersonalView = () => {
                                             <div className="row justify-content-center">
                                                 <div className="d-flex justify-content-center justify-content-xl-start ">
                                                     <Button className=" mt-3 btn btn-primary ms-xl-3"
-                                                     disabled={selectedItm ? false : true}
-                                                      onClick={() => setInf(true)}>Inquire Now</Button>
+                                                        disabled={selectedItm ? false : true}
+                                                        onClick={() => setInf(true)}>Inquire Now</Button>
                                                 </div>
                                             </div>
                                         </Col>
@@ -158,8 +158,8 @@ const PersonalView = () => {
                                     <Row className="mt-5 mb-5 me-xl-5 ms-xl-5  ms-md-2">
                                         <Col className="p-0">
                                             <label className="fw-bold list-font">Product Information</label>
-                                            <ul className="mt-5">
-                                                {networkData.data.productInformation.map((v, i) => <li className="list-font ms-xl-3" key={i}>{v}</li>)}
+                                            <ul className="mt-5 ps-4">
+                                                {networkData.data.productInformation.map((v, i) => <li className="list-font" key={i}>{v}</li>)}
                                             </ul>
                                         </Col>
                                     </Row>

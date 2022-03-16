@@ -55,7 +55,7 @@ const CustomTemplePage = () => {
                         <ProductCard
                             iditem={value._id}
                             key={index}
-                            image={TempleLink+value.image[0]}
+                            image={value.image[0]}
                             name={value.name}
                             price={value.price}
                         />

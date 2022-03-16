@@ -1,30 +1,46 @@
 import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
-import { getTemplesForLimit } from "../../Api/api";
+import { getTemplesForLimit, getTemplesPagignate } from "../../Api/api";
 import Loader from "../../Components/common/Loader"
 import { TempleLink } from "../../common/common";
 import LabelOfContent from "../common/LabelOfContent";
 import ProductCard from "../Products/ProductCard";
 const CustomTemples = () => {
   const navigate = useNavigate()
-  const [templeData,setTempleData] = useState([])
+  // const [templeData,setTempleData] = useState([])
+  // const [loader,setLoader] = useState(true)
+  const [templeData, setTempleData] = useState([])
+  const [page, setPage] = useState(1)
+  const [dataCount,setDataCount] = useState(0)
+  const [btnS,setBtnS] = useState('')
   const [loader,setLoader] = useState(true)
-  useEffect(()=>{
-    TemplesApi()
-  },[])
-  const TemplesApi = () =>{
-    getTemplesForLimit()
-    .then((response)=>{
-      setTempleData(response.data.data)
-      setLoader(false)
-    })
-    .catch((error)=>alert(error.message))
+  const [currentTotal,setCurrentTotal] = useState(0)
+  useEffect(() => {
+      TemplesApi()
+  }, [])
+  const TemplesApi = () => {
+      getTemplesPagignate(page, 8)
+          .then((response) => {
+              setDataCount(response.data.total_documents)
+              setTempleData(response.data.data)
+              setLoader(false)
+              console.log(response.data.data.length)
+          })
+          .catch((error) => {
+              alert(error.message)
+          })
   }
-  
-  const handleNavigate = () => {
-    navigate('/customtemples')
+  const SeeMore = () => {
+      setPage(page + 1)
   }
+  useEffect(() => {
+      getTemplesPagignate(page, 8)
+          .then((response) => setTempleData(templeData.concat(response.data.data)))
+          .catch((error) => alert(error))
+         
+  }, [page])
+
   return (
     <div className="Paddings-Top-Contain">
       <LabelOfContent title={"Custom Temples"} />
@@ -35,7 +51,7 @@ const CustomTemples = () => {
             <ProductCard
               iditem={value._id}
               key={index}
-              image={TempleLink+value.image[0]}
+              image={value.image[0]}
               name={value.name} 
               price={value.price}
             />
@@ -45,7 +61,7 @@ const CustomTemples = () => {
       </Row>
       <Row className="text-center mt-5">
         <Col lg="12">
-          <div className="btn btn-primary" onClick={() => handleNavigate()}>View All</div>
+          <div className="btn btn-primary" onClick={() => SeeMore()} style={{display: templeData.length === dataCount ? 'none' : ''}}>View All</div>
         </Col>
       </Row>
     </div>
