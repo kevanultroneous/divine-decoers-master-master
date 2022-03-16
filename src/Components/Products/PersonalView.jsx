@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Button, Col, Image, Row } from "react-bootstrap"
+import { Button, Col, Image, Modal, Row } from "react-bootstrap"
 import { findId, FrameLink, sliderRes, TempleLink } from "../../common/common"
 import Slider from "react-slick/lib/slider"
 import InquireForm from "./InquireForm"
@@ -20,12 +20,15 @@ const PersonalView = () => {
     const [networkData, setNetworkData] = useState({})
     const [templename, setTemplename] = useState('')
     const [loader, setLoader] = useState(true)
+    const [modalImage,setModalImage] = useState('')
+    const [imageModel,setImageModel] = useState(false)
     const catchId = findId(params.templeid)
     const [dval, setDval] = useState('')
     const navigate = useNavigate()
     useEffect(() => {
         window.addEventListener('scroll', (event) => {
-            if (window.scrollY > 636) {
+            console.log(window.scrollY)
+            if (window.scrollY > 500) {
                 setDval('17%')
             } else {
                 setDval('')
@@ -69,16 +72,28 @@ const PersonalView = () => {
         setDis('none')
         setHItem('')
     }
-    const ModalImgV = (p) => {
-        return (
-            <div className="mv position-absolute m-mv" style={{ display: p.display, marginTop: p.dymicdown }}>
-                <Image src={p.pl} height={300} />
-            </div>
-        )
-    }
+    // const ModalImgV = (p) => {
+    //     return (
+    //         <div className="mv position-absolute m-mv" style={{ display: p.display, marginTop: p.dymicdown }}>
+    //             <Image src={p.pl} height={300} />
+    //         </div>
+    //     )
+    // }
+
     return (
         <>
-
+            <Modal
+                size="sm"
+                show={imageModel}
+                onHide={() => setImageModel(false)}
+                centered
+                aria-labelledby="example-modal-sizes-title-sm"
+            >
+               
+                <Modal.Body>
+                    <Image src={modalImage} height={'300px'} width={'100%'}/>
+                </Modal.Body>
+            </Modal>
             {
                 params.templeid === 'undefined' || !params.templeid ?
                     navigate('/') :
@@ -121,15 +136,20 @@ const PersonalView = () => {
                                                     <p className="p-sub-para w-100">{networkData.data.information}</p>
                                                 </div>
                                             </div>
-                                            <ModalImgV pl={hItem} display={dis} dymicdown={dval} />
+                                            {/* <ModalImgV pl={hItem} display={dis} dymicdown={dval} /> */}
                                             <p style={{ color: '#44233B' }} className="fw-700 ms-md-3 mt-md-3">Select your Frame/Pillar</p>
                                             <div className="row ms-xl-3 ms-3 mt-5 ">
                                                 {networkData.doc.map((v, i) =>
                                                     <Col xl={2}
                                                         xs={4} md={2} className="p-0" key={i}>
                                                         <label
-                                                            onMouseLeave={() => onHoverOutAction()}
-                                                            onMouseEnter={() => onHoverAction(v.frameimage)}>
+                                                            onClick={()=>{
+                                                                setImageModel(true)
+                                                                setModalImage(v.frameimage)
+                                                            }}
+                                                            // onMouseLeave={() => onHoverOutAction()}
+                                                            // onMouseEnter={() => onHoverAction(v.frameimage)}
+                                                            >
                                                             <input
                                                                 type="radio"
                                                                 name="test"
