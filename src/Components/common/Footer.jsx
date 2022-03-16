@@ -61,7 +61,7 @@ Terms & Conditions
             </div>
         </div>
       </Col>
-      <Col lg="3" xl="3" sm="12" md="5" className="text-white mt-3">
+      <Col lg="3" xl="3" xs="12" md="5" className="text-white mt-3">
         <div className="fw-700">Subscribe to our newsletter</div>
         <InputGroup className="mb-3 mt-3 w-100">
           <FormControl

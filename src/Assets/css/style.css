@@ -662,14 +662,23 @@ body {
 
   .under-content {
     padding-top: 30em;
-    margin-bottom: 12em;
+    margin-bottom: 10em;
   }
 
   .vector {
     display: none;
   }
 }
-
+@media only screen and (max-width: 395px)  {
+  .under-content {
+    padding-top: 34em;
+  }
+}
+@media only screen and (min-width: 395px) and (max-width: 415px)  {
+  .under-content {
+    padding-top: 38em;
+  }
+}
 @media (min-width: 768px) and (max-width: 1024px) {
   .fs-37 {
     font-size: 18px;
