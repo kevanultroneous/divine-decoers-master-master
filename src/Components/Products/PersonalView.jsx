@@ -19,14 +19,14 @@ const PersonalView = () => {
     const [inf, setInf] = useState(false)
     const [networkData, setNetworkData] = useState({})
     const [templename, setTemplename] = useState('')
-  const [loader,setLoader] = useState(true)
+    const [loader,setLoader] = useState(true)
     const catchId = findId(params.templeid)
     const [dval,setDval] = useState('')
     const navigate = useNavigate()
     useEffect(()=>{
         window.addEventListener('scroll',(event)=>{
             if(window.scrollY > 636){
-                setDval('23%')
+                setDval('17%')
             }else{
                 setDval('')
             }
@@ -72,7 +72,7 @@ const PersonalView = () => {
     const ModalImgV = (p) => {
         return (
             <div className="mv position-absolute m-mv" style={{ display: p.display ,marginTop:p.dymicdown}}>
-                <Image src={p.pl} height={250} />
+                <Image src={p.pl} height={300} />
             </div>
         )
     }
