@@ -155,11 +155,11 @@ const PersonalView = () => {
                                             </div>
                                         </Col>
                                     </Row>
-                                    <Row className="mt-5 mb-5 me-xl-5 ms-xl-5 ms-md-2">
+                                    <Row className="mt-5 mb-5 me-xl-5 ms-xl-4 ms-md-2">
                                         <Col>
-                                            <label className="fw-bold list-font ms-xl-5">Product Information</label>
+                                            <label className="fw-bold list-font ms-2">Product Information</label>
                                             <ul className="mt-5">
-                                                {networkData.data.productInformation.map((v, i) => <li className="list-font ms-xl-5" key={i}>{v}</li>)}
+                                                {networkData.data.productInformation.map((v, i) => <li className="list-font ms-xl-3" key={i}>{v}</li>)}
                                             </ul>
                                         </Col>
                                     </Row>
