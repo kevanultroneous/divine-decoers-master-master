@@ -55,7 +55,7 @@ Terms & Conditions
             <AiFillInstagram />
           </div>
           <div className="col-2 fw-700">
-          <a href="https://www.instagram.com/divinedecores/" target="_blank" className="link-styles">
+          <a href="https://www.instagram.com/divinedecores/" target="_blank" className="link-styles" rel="noreferrer">
             Instagram
             </a>
             </div>

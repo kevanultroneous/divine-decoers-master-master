@@ -43,7 +43,7 @@ const PersonalView = () => {
         // console.log(networkData)
     }, [params])
     const NetworkDataFetch = () => {
-        GetTempleById(catchId)
+        GetTempleById(params.templeid)
             .then((response) => {
                 setNetworkData(response.data)
                 setTemplename(response.data.data.name)
@@ -125,7 +125,7 @@ const PersonalView = () => {
                                             <p style={{ color: '#44233B' }} className="fw-700 ms-md-3 mt-md-3">Select your Frame/Pillar</p>
                                             <div className="row ms-xl-3 ms-3 mt-5 ">
                                                 {networkData.doc.map((v, i) =>
-                                                    <Col xl="2"
+                                                    <Col xl={2}
                                                      xs={4} md={2}  className="p-0" key={i}>
                                                         <label
                                                             onMouseLeave={() => onHoverOutAction()}
@@ -155,9 +155,9 @@ const PersonalView = () => {
                                             </div>
                                         </Col>
                                     </Row>
-                                    <Row className="mt-5 mb-5 me-xl-5 ms-xl-4 ms-md-2">
-                                        <Col>
-                                            <label className="fw-bold list-font ms-2">Product Information</label>
+                                    <Row className="mt-5 mb-5 me-xl-5 ms-xl-5  ms-md-2">
+                                        <Col className="p-0">
+                                            <label className="fw-bold list-font">Product Information</label>
                                             <ul className="mt-5">
                                                 {networkData.data.productInformation.map((v, i) => <li className="list-font ms-xl-3" key={i}>{v}</li>)}
                                             </ul>

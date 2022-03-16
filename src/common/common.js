@@ -13,7 +13,7 @@ export const findId = (str) =>{
   let k2 = str.substring(k1+1)
   return k2;
 }
-const apiUrl1 = "http://192.168.1.28:8000/"
+const apiUrl1 = "http://52.66.95.205:8000/"
 // const apiUrl2 = "http://192.168.29.42:8000/"
 export const TempleLink = apiUrl1+"temples/"
 export const FrameLink = apiUrl1+"frames/"

@@ -22,6 +22,7 @@ const RelatedItem = () => {
     {
       setTempleData(response.data.data)
       setLoader(false)
+     
     })
     .catch((error)=>alert(error.message))
   }
@@ -50,8 +51,10 @@ const RelatedItem = () => {
             <Slider {...settings} ref={sliderRef} className="mt-4 me-xl-5 ms-xl-5 me-md-5 ms-md-5 mb-5">
               {
                 templeData.map((value, index) =>
-                <Link to={`/viewitem/${slugify(value.name+" "+value._id,'-')}`}>
+              
+                <Link to={`/viewitem/${value._id}`}>
                   <div className="card p-0 border-0 w-75 w-xl-100 w-md-100">
+                    {console.log(value.image[0])}
                     <Image src={TempleLink+value.image[0]} className="card-img-top" style={{borderRadius:'12px'}} />
                     <div className="card-img-overlay overlay overlay-m">
                       <div className="row">
