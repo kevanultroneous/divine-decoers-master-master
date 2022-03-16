@@ -32,7 +32,10 @@ const OffCanvasComp = (props) => {
           <Row className="mt-5 ms-3">
             <Col>
               <p className="m-0">Whats app</p>
-              <p>+61 403 260 924</p>
+              <p>
+              <a href="https://wa.me/+61403260924"
+                target="_blank"
+              style={{textDecoration:'none' ,color:'#44243B'}}>+61 403 260 924</a></p>
             </Col>
           </Row>
           <Row className="mt-3 ms-3">

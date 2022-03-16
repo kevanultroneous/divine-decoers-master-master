@@ -93,7 +93,7 @@ const PersonalView = () => {
                            loader ? <Loader/>
                                 :
                                 <>
-                                    <Row className="mt-5 mb-5 ms-xl-5 ">
+                                    <Row className="mt-5 mb-5 ">
                                         <Col xl={5} lg={5} xs={12}>
                                             <Slider {...settings} className="mt-4 me-xl-5 ms-xl-5 mb-5 ms-md-2 me-md-2">
                                                 {
@@ -125,7 +125,7 @@ const PersonalView = () => {
                                             <p style={{ color: '#44233B' }} className="fw-700 ms-md-3 mt-md-3">Select your Frame/Pillar</p>
                                             <div className="row ms-xl-3 ms-3 mt-5 ">
                                                 {networkData.doc.map((v, i) =>
-                                                    <Col xl={networkData.doc.length >= 6 ? 2 : 3 }
+                                                    <Col xl="2"
                                                      xs={4} md={2}  className="p-0" key={i}>
                                                         <label
                                                             onMouseLeave={() => onHoverOutAction()}

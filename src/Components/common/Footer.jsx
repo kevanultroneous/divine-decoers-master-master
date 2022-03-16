@@ -13,7 +13,10 @@ const Footer = () => {
           <p className="text-white mt-3 fw-500">
           39C, Mandoon Road, Girraween, 2145
             <br />+61 403 260 924
-            <br />sales@divinedecores.com.au
+            <br />
+            <a href="mailto:sales@divinedecores.com.au"className="link-styles">
+            sales@divinedecores.com.au
+            </a>
           </p>
         </div>
       </Col>
