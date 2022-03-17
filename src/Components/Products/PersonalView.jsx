@@ -38,11 +38,11 @@ const PersonalView = () => {
     useEffect(() => {
         NetworkDataFetch()
         // console.log(networkData)
-
     }, [])
     useEffect(() => {
         NetworkDataFetch()
         window.scrollTo(0, 0)
+        setSelectedItem('')
         // console.log(networkData)
     }, [params])
     const NetworkDataFetch = () => {
@@ -64,14 +64,14 @@ const PersonalView = () => {
         nextArrow: <Image src={rightA} height={200} />,
         prevArrow: <Image src={leftA} />
     };
-    const onHoverAction = (img) => {
-        setDis('block')
-        setHItem(img)
-    }
-    const onHoverOutAction = () => {
-        setDis('none')
-        setHItem('')
-    }
+    // const onHoverAction = (img) => {
+    //     setDis('block')
+    //     setHItem(img)
+    // }
+    // const onHoverOutAction = () => {
+    //     setDis('none')
+    //     setHItem('')
+    // }
     // const ModalImgV = (p) => {
     //     return (
     //         <div className="mv position-absolute m-mv" style={{ display: p.display, marginTop: p.dymicdown }}>

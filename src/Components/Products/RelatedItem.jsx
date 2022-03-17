@@ -41,7 +41,7 @@ const RelatedItem = () => {
         loader ? <Loader/> :
           <>
           <LabelWithChild
-          title="Related Product"
+          title="You Might also Like"
           next={() => sliderRef.current.slickPrev()}
           prev={() => sliderRef.current.slickNext()}
         />
