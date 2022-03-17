@@ -7,12 +7,13 @@ import user5 from "../Assets/images/user5.png";
 import user6 from "../Assets/images/user6.png";
 
 import plr from "../Assets/images/plr.png";
-
+export const MyUrl = "http://localhost:3000/"
 export const findId = (str) =>{
   let k1 = str.indexOf('-')
   let k2 = str.substring(k1+1)
   return k2;
 }
+
 const apiUrl1 = "http://52.66.95.205:8001/"
 // const apiUrl2 = "http://192.168.29.42:8000/"
 export const TempleLink = apiUrl1+"temples/"

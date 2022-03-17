@@ -2,7 +2,8 @@ import { Col, FormControl, Image, InputGroup, Row } from "react-bootstrap";
 import { FaFacebookF } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 import image from "../../Assets/images/icon2.png";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
+import { MyUrl } from "../../common/common";
 const Footer = () => {
   return (
 
@@ -11,33 +12,31 @@ const Footer = () => {
         <div>
           <Image src={image} />
           <p className="text-white mt-3 fw-500">
-          39C, Mandoon Road, Girraween, 2145
+            39C, Mandoon Road, Girraween, 2145
             <br />+61 403 260 924
             <br />
-            <a href="mailto:sales@divinedecores.com.au"className="link-styles">
-            sales@divinedecores.com.au
+            <a href="mailto:sales@divinedecores.com.au" className="link-styles">
+              sales@divinedecores.com.au
             </a>
           </p>
         </div>
       </Col>
       <Col lg="3" xl="3" sm="12" md="5" className="text-white mt-3 mb-3">
         <div className="fw-700">
-          <a href="http://localhost:3000/#about" className="link-styles">
+          <a href={`${MyUrl}#about`} className="link-styles">
             About Us
-            </a>
-          </div>
+          </a>
+        </div>
         {/* <div className="fw-700 mt-xl-3 mt-3">
         <Link to="/">
           Contact Us
           </Link>
           </div> */}
-        {/* <div className="fw-700 mt-xl-3 mt-3">
-      <a href="" className="link-styles">
-Terms & Conditions
-      </a>
-          
-       
-          </div> */}
+        <div className="fw-700 mt-xl-3 mt-3">
+          <Link to="/" className="link-styles" rel="noreferrer">
+            Terms & Conditions
+          </Link>
+        </div>
       </Col>
       <Col lg="3" xl="3" sm="12" md="5" className="text-white mt-3 mb-3 ">
         <div className="row">
@@ -46,19 +45,19 @@ Terms & Conditions
           </div>
           <div className="col-2 fw-700">
             <a href="https://www.facebook.com/divinedecores/" target="_blank" className="link-styles" rel="noreferrer">
-            Facebook
-              </a>
-            </div>
+              Facebook
+            </a>
+          </div>
         </div>
         <div className="row mt-2">
           <div className="col-2 text-end">
             <AiFillInstagram />
           </div>
           <div className="col-2 fw-700">
-          <a href="https://www.instagram.com/divinedecores/" target="_blank" className="link-styles" rel="noreferrer">
-            Instagram
+            <a href="https://www.instagram.com/divinedecores/" target="_blank" className="link-styles" rel="noreferrer">
+              Instagram
             </a>
-            </div>
+          </div>
         </div>
       </Col>
       <Col lg="3" xl="3" xs="12" md="5" className="text-white mt-3">
