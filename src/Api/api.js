@@ -1,6 +1,6 @@
 import axios from "axios";
 // const api1  = "http://192.168.29.42:8000/api/"
-const MainUrl = "http://52.66.95.205:8001/api/"
+const MainUrl = "http://13.237.164.114:8000/api/"
 axios.defaults.baseURL = MainUrl
 
 export const getAboutus = () =>{
