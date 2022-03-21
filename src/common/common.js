@@ -7,7 +7,7 @@ import user5 from "../Assets/images/user5.png";
 import user6 from "../Assets/images/user6.png";
 
 import plr from "../Assets/images/plr.png";
-export const MyUrl = "http://localhost:3000/"
+export const MyUrl = "http://13.237.164.114:8000/"
 export const findId = (str) =>{
   let k1 = str.indexOf('-')
   let k2 = str.substring(k1+1)
