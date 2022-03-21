@@ -91,7 +91,7 @@ const DivineNavbar = () => {
               <Nav.Link href={`${MyUrl}#about`} className="pt-xl-0 pt-lg-0">About Us</Nav.Link>
               <div className="vector ms-5" />
 
-              <Nav.Link href="https://www.facebook.com/divinedecores/ " className="fs-20 ps-4 pe-3 " target="_blank">
+              <Nav.Link href="https://www.facebook.com/divinedecores/ " className="fs-20 ps-4 pe-xl-3 pes-0" target="_blank">
                 <FaFacebookF />
               </Nav.Link>
 

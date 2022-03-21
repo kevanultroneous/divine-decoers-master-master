@@ -898,7 +898,9 @@ body {
   .title-level-2 {
     font-size: 2.7em;
   }
-
+  .pes-0{
+    padding-right: 0% !important;
+  }
   .icon-size {
     width: 102px;
     height: 40px;
