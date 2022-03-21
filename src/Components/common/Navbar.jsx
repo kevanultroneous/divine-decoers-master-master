@@ -5,9 +5,8 @@ import { AiFillInstagram } from "react-icons/ai";
 import logo from "../../Assets/images/icon.png";
 import call from "../../Assets/images/call.png"
 import OffCanvasComp from "./OffCanvasComp";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import menu from "../../Assets/images/menu.png"
-import ScrollToTop from "react-scroll-to-top";
 import close from "../../Assets/images/close.png"
 import { MyUrl } from "../../common/common";
 

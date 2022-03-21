@@ -898,9 +898,11 @@ body {
   .title-level-2 {
     font-size: 2.7em;
   }
-  .pes-0{
+
+  .pes-0 {
     padding-right: 0% !important;
   }
+
   .icon-size {
     width: 102px;
     height: 40px;
@@ -1048,11 +1050,23 @@ body {
     margin-bottom: 12em;
   }
 }
+
 @keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
+
 @keyframes fadeOut {
-  0% {opacity:1;}
-  100% {opacity:0;}
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
