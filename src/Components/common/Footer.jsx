@@ -40,7 +40,7 @@ const Footer = () => {
       </Col>
       <Col lg="3" xl="3" sm="12" md="5" className="text-white mt-3 mb-3 ">
         <div className="row">
-          <div className="col-2 text-end">
+          <div className="col-2 text-xl-end">
             <FaFacebookF />
           </div>
           <div className="col-2 fw-700">
@@ -50,7 +50,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="row mt-2">
-          <div className="col-2 text-end">
+          <div className="col-2 text-xl-end">
             <AiFillInstagram />
           </div>
           <div className="col-2 fw-700">

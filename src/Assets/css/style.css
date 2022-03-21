@@ -664,12 +664,20 @@ body {
 
 /* media queries */
 @media only screen and (max-width: 600px) {
+  .Paddings-Top-Contain-P {
+    padding-top: 4em;
+}
   .Paddings-Top-Contain {
     padding-top: 4em;
   }
-
+  .mob-w{
+    width: 19em;
+  }
+  .Title-Space {
+    margin-right: 0em !important;
+}
   .Padding-Title {
-    padding-top: 5em;
+    padding-top: 2em;
   }
 
   .icon-size {
@@ -752,11 +760,11 @@ body {
   }
 
   .title-level-2 {
-    font-size: 30px;
+    font-size:1.7em !important;
   }
 
   .title-level-1 {
-    font-size: 34px;
+    font-size: 1.7em !important;
   }
 
   .title-level-3 {
@@ -793,7 +801,67 @@ body {
     display: none;
   }
 }
+@media only screen and (min-width: 360px) and (max-width: 640px)  {
+  .Padding-Title {
+    padding-top: 3em !important;
+  }
+}
+@media only screen and (min-width: 360px) and (max-width: 780px)  {
+  .Padding-Title {
+    padding-top: 4em !important;
+  }
+}
 
+@media  (min-width: 360px) and (max-width: 880px)  {
+  .Padding-Title {
+    padding-top:5em !important;
+  }
+}
+@media  (min-width: 375px) and (max-width: 812px)  {
+  .Padding-Title {
+    padding-top: 4em !important;
+  }
+}
+@media  (min-width: 390px) and (max-width: 844px)  {
+  .Padding-Title {
+    padding-top: 6em !important;
+  }
+}
+@media  (min-width: 393px) and (max-width: 851px)  {
+  .Padding-Title {
+    padding-top: 7em !important;
+  }
+}
+@media only screen and (min-width: 412px) and (max-width: 915px)  {
+  .Padding-Title {
+    padding-top: 7em !important;
+  }
+}
+@media only screen and (min-width: 414px) and (max-width: 896px)  {
+  .Padding-Title {
+    padding-top: 4.5em !important;
+  }
+}
+/* @media only screen and (min-width: 360px) and (max-width: 800px)  {
+  .Padding-Title {
+    padding-top: 5em !important;
+  }
+} */
+/* @media only screen and (min-width: 412px) and (max-width: 896px)  {
+  .Padding-Title {
+    padding-top: 5em !important;
+  }
+} */
+@media  (min-width: 375px) and (max-width: 667px)  {
+  .Padding-Title {
+    padding-top: 5em;
+  }
+}
+@media only screen and (min-width: 416px) and (max-width: 428px)  {
+  .Padding-Title {
+    padding-top: 14em !important;
+  }
+}
 @media screen and (min-width: 1440px) {
   .m-mv {
     margin-top: -15%;
@@ -812,7 +880,13 @@ body {
   .title-level-2 {
     font-size: 2.7em;
   }
-
+  .icon-size {
+    width: 102px;
+    height: 40px;
+}
+  .pd-r{
+    padding-right: 0.3em !important;
+  }
   .title-level-1 {
     font-size: 2.7em;
   }

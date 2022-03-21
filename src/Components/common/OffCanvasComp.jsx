@@ -4,7 +4,7 @@ import close from "../../Assets/images/close.png"
 
 const OffCanvasComp = (props) => {
   return (
-    <Offcanvas show={props.show} onHide={props.hide} placement="end" style={{ background: '#FFEFE2' }}>
+    <Offcanvas show={props.show} onHide={props.hide} placement="end" style={{ background: '#FFEFE2' }} className="mob-w">
       <Offcanvas.Body>
         <Row className="text-end mt-3 mx-5 mx-xl-1">
           <Col>
@@ -40,9 +40,9 @@ const OffCanvasComp = (props) => {
           </Row>
           <Row>
             <Col className="mt-3 ms-4">
-              <p className="ms-2 mb-0" style={{ color: '#44243B' }}>Call</p>
+              <p className="ms-1 mb-0" style={{ color: '#44243B' }}>Call</p>
               <a href="tel:+61403260924"
-                  style={{ textDecoration: 'none', color: '#44243B' }} rel="noreferrer">+61 403 260 924</a>
+                  style={{ textDecoration: 'none', color: '#44243B' }} rel="noreferrer" className="ms-1">+61 403 260 924</a>
             </Col>
           </Row>
           <Row className="mt-4 ms-3">
