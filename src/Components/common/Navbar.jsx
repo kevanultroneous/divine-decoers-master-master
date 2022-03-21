@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import menu from "../../Assets/images/menu.png"
 import ScrollToTop from "react-scroll-to-top";
 import close from "../../Assets/images/close.png"
+import { MyUrl } from "../../common/common";
 
 const DivineNavbar = () => {
   const [show, setShow] = useState(false)
@@ -87,7 +88,7 @@ const DivineNavbar = () => {
               <Link to="/customtemples" className="text-decoration-none">
                 <Nav.Link href="/customtemples" className="me-xl-5 me-md-5 me-lg-5">Products</Nav.Link>
               </Link>
-              <Nav.Link href="http://localhost:3000/#about" className="pt-xl-0 pt-lg-0">About Us</Nav.Link>
+              <Nav.Link href={`${MyUrl}#about`} className="pt-xl-0 pt-lg-0">About Us</Nav.Link>
               <div className="vector ms-5" />
 
               <Nav.Link href="https://www.facebook.com/divinedecores/ " className="fs-20 ps-4 pe-3" target="_blank">
