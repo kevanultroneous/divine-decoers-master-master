@@ -1,12 +1,10 @@
-import { useRef } from "react";
-import { Col, Container, Image, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import AboutUs from "../Components/Home/AboutUs";
 import CustomTemples from "../Components/Home/CustomTemples";
 import Footer from "../Components/common/Footer";
 import TestiMonial from "../Components/Home/TestiMonial";
 import TitleContent from "../Components/Home/TitleContent";
 import DivineNavbar from "../Components/common/Navbar"
-import bg from "../Assets/images/background.png"
 const MainPage = () => {
   return (
     <>
