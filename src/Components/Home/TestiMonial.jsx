@@ -13,7 +13,8 @@ const TestiMonial = () => {
     arrows: false,
     slidesToShow: 3,
     slidesToScroll: 1,
-    responsive: sliderRes
+    responsive: sliderRes,
+    
   };
   return (
     <div className="Paddings-Top-Contain">

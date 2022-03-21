@@ -44,7 +44,6 @@ const CustomTemplePage = () => {
         <Container fluid className="back-contain Paddings-Top-Contain-P" style={{animation:'fadeIn linear 3s'}}>
             {
                loader ? 
-               
                 <Loader/>
                 :
                 <>
