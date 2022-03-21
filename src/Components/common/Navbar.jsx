@@ -91,7 +91,7 @@ const DivineNavbar = () => {
               <div className="vector ms-5" />
 
               <Nav.Link href="https://www.facebook.com/divinedecores/ " className="fs-20 ps-4 pe-xl-3 pes-0" target="_blank">
-                <FaFacebookF height={21} />
+                <FaFacebookF style={{height:'21px'}}/>
               </Nav.Link>
 
               <Nav.Link href="https://www.instagram.com/divinedecores/" className="fs-20 ps-0  pe-4 pd-r" target="_blank">
