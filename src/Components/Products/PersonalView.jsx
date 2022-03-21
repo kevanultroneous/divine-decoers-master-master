@@ -175,7 +175,7 @@ const PersonalView = () => {
                                             </div>
                                         </Col>
                                     </Row>
-                                    <Row className="mt-5 mb-5 me-xl-5 ms-xl-5  ms-md-2">
+                                    <Row className="mt-5 mb-5 me-xl-5 ms-xl-5 ms-2  ms-md-2">
                                         <Col className="p-0">
                                             <label className="fw-bold list-font">Product Information</label>
                                             <ul className="mt-5 ps-4">

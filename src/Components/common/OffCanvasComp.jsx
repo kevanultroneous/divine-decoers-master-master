@@ -6,7 +6,7 @@ const OffCanvasComp = (props) => {
   return (
     <Offcanvas show={props.show} onHide={props.hide} placement="end" style={{ background: '#FFEFE2' }} className="mob-w">
       <Offcanvas.Body>
-        <Row className="text-end mt-3 mx-5 mx-xl-1">
+        <Row className="text-end mt-3  mx-xl-1">
           <Col>
             <Image src={close} height="45px" onClick={props.onClose} />
           </Col>

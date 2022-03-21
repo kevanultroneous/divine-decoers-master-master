@@ -68,7 +68,7 @@ const DivineNavbar = () => {
         onToggle={() => setOffc(true)}
         expand="lg"
         expanded={navExpanded}
-        style={{ background: chngClr ? '#FFEFE2' : 'none', transition: '0.5s' }} fixed="top">
+        style={{ background: chngClr ? '#FFEFE2' : 'none', transition: '0.5s'}} fixed="top">
         <Container fluid className="p-xl-3 p-md-3 p-lg-3 p-3">
           <Link to="/" className="text-decoration-none">
             <Navbar.Brand href="#" className="ms-md-1 ms-xs-1 ms-xl-5 ms-lg-5 ms-1">
