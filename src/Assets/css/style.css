@@ -578,14 +578,14 @@ body {
 
 .btn:hover {
   color: #fff;
-  background-color: #db4242 !important;
-  border-color: #DB4242 !important;
+  background-color: #db4242;
+  border-color: #DB4242;
 }
 
 .btn-check:focus+.btn-primary, .btn-primary:focus {
   color: #fff;
-  background-color: #db4242 !important;
-  border-color: #DB4242 !important;
+  background-color: #db4242 ;
+  border-color: #DB4242 ;
 }
 
 [type=radio]:checked+img {

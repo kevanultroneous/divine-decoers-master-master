@@ -33,7 +33,7 @@ const Footer = () => {
           </Link>
           </div> */}
         <div className="fw-700 mt-xl-3 mt-3">
-          <Link to="/" className="link-styles" rel="noreferrer">
+          <Link to="/terms-and-conditions" className="link-styles" rel="noreferrer">
             Terms & Conditions
           </Link>
         </div>
